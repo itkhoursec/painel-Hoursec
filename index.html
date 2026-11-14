@@ -1,370 +1,1569 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taniclei Pontes Ribas | Corretora de Imóveis</title>
-<meta name="description" content="Casas e imóveis disponíveis com Taniclei Pontes Ribas, corretora de imóveis.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--pinho:#12352f;--pinho2:#1d4f46;--latao:#b8893b;--fundo:#f5f6f2;--tinta:#1c2321;--cinza:#68726f;--linha:#dde2dc;--br:12px}
-*{box-sizing:border-box;margin:0}
-body{font-family:Figtree,system-ui,sans-serif;background:var(--fundo);color:var(--tinta);line-height:1.55}
-h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.15}
-button,input,select,textarea{font:inherit;color:inherit}
-button{cursor:pointer}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--latao);outline-offset:2px}
-[hidden]{display:none!important}
-.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
-.btn{display:inline-block;border:0;border-radius:8px;padding:11px 20px;font-weight:600;text-decoration:none;background:var(--pinho);color:#fff}
-.btn:hover{background:var(--pinho2)}
-.btn.ouro{background:var(--latao)}.btn.ouro:hover{background:#a67a30}
-.btn.zap{background:#1f9d55}.btn.zap:hover{background:#188246}
-.btn.sec{background:#fff;color:var(--pinho);border:1px solid var(--linha)}
-.btn.red{background:#b83a2e}
-.btn.peq{padding:6px 12px;font-size:.88rem}
-/* topo */
-.top{background:var(--pinho);color:#fff;position:sticky;top:0;z-index:20}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
-.logo{font-family:'DM Serif Display',serif;font-size:1.25rem;text-decoration:none}
-.top nav{display:flex;gap:20px;align-items:center}
-.top nav a{text-decoration:none;font-size:.95rem;opacity:.9}
-.top nav a:hover{opacity:1;text-decoration:underline}
-@media(max-width:640px){.top nav a:not(.btn){display:none}}
-.hero{background:linear-gradient(105deg,rgba(18,53,47,.96) 45%,rgba(18,53,47,.7)),repeating-linear-gradient(90deg,#1d4f46 0 2px,transparent 2px 60px);color:#fff;padding:72px 0 96px}
-.hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);max-width:15ch}
-.hero p{max-width:46ch;margin:18px 0 28px;font-size:1.1rem;opacity:.9}
-.hero .acoes{display:flex;gap:12px;flex-wrap:wrap}
-/* busca */
-.busca{background:#fff;border-radius:var(--br);box-shadow:0 10px 30px rgba(18,53,47,.15);padding:18px;margin-top:-52px;position:relative;display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px}
-.busca input,.busca select{width:100%;padding:11px;border:1px solid var(--linha);border-radius:8px;background:#fff}
-@media(max-width:900px){.busca{grid-template-columns:1fr 1fr}.busca input{grid-column:1/-1}}
-.sec-t{display:flex;justify-content:space-between;align-items:end;margin:44px 0 18px;gap:10px;flex-wrap:wrap}
-.sec-t h2{font-size:2rem}
-.sec-t span{color:var(--cinza)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
-.card{background:#fff;border-radius:var(--br);overflow:hidden;border:1px solid var(--linha);cursor:pointer;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.1)}
-.ph{height:210px;background:linear-gradient(135deg,#d9e2dc,#c4d1c9);position:relative;display:grid;place-items:center;font-size:3rem}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tag{position:absolute;left:12px;top:12px;background:var(--pinho);color:#fff;font-size:.8rem;padding:3px 10px;border-radius:99px}
-.tag.d{left:auto;right:12px;background:var(--latao)}
-.vend{position:absolute;inset:0;background:rgba(18,53,47,.6);color:#fff;display:grid;place-items:center;font-family:'DM Serif Display',serif;font-size:1.8rem}
-.cb{padding:16px}
-.pr{font-size:1.4rem;font-weight:700;color:var(--pinho)}.pr small{font-size:.85rem;font-weight:500;color:var(--cinza)}
-.cb h3{font-size:1.15rem;margin:4px 0}
-.loc{color:var(--cinza);font-size:.92rem}
-.ft{display:flex;gap:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--linha);font-size:.9rem;flex-wrap:wrap}
-.vazio{grid-column:1/-1;text-align:center;padding:50px 10px;color:var(--cinza)}
-/* sobre/contato */
-.sobre{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:70px 0}
-@media(max-width:800px){.sobre{grid-template-columns:1fr}}
-.sobre h2{font-size:2rem;margin-bottom:12px}
-.sobre p{white-space:pre-line;max-width:60ch}
-.cx{background:#fff;border:1px solid var(--linha);border-radius:var(--br);padding:22px}
-.cx label,.fm label{display:block;font-weight:600;font-size:.9rem;margin:12px 0 4px}
-.cx input,.cx textarea,.fm input,.fm select,.fm textarea{width:100%;padding:10px;border:1px solid var(--linha);border-radius:8px;background:#fff}
-.dados{list-style:none;padding:0;margin-top:18px;display:grid;gap:6px}
-footer{background:var(--pinho);color:#dfe8e4;padding:28px 0;font-size:.9rem}
-footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-footer a{opacity:.7}
-.zapfix{position:fixed;right:18px;bottom:18px;z-index:30;width:56px;height:56px;border-radius:50%;background:#1f9d55;color:#fff;display:grid;place-items:center;font-size:1.7rem;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)}
-/* modal */
-.mod{position:fixed;inset:0;background:rgba(10,25,22,.75);z-index:50;overflow:auto;padding:20px}
-.mod .box{background:#fff;max-width:900px;margin:0 auto;border-radius:var(--br);overflow:hidden;position:relative}
-.fechar{position:absolute;right:12px;top:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:#fff;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-.gal{height:min(55vh,440px);background:#d9e2dc;display:grid;place-items:center;font-size:4rem}
-.gal img{width:100%;height:100%;object-fit:cover}
-.mini{display:flex;gap:6px;padding:8px;overflow-x:auto;background:#f0f2ee}
-.mini img{width:80px;height:60px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.6;border:2px solid transparent}
-.mini img.on{opacity:1;border-color:var(--latao)}
-.mb{padding:24px}
-.mb h2{font-size:1.9rem}
-.mb .desc{white-space:pre-line;margin:16px 0;max-width:68ch}
-.fatos{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:16px 0}
-.fatos div{background:var(--fundo);padding:10px;border-radius:8px;text-align:center}
-.fatos b{display:block;font-size:1.2rem;color:var(--pinho)}
-/* admin */
-#admin{min-height:100vh;background:#eef0eb}
-.ab{background:var(--pinho);color:#fff;padding:14px 0}
-.ab .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
-.tabs button{padding:9px 16px;border-radius:8px;border:1px solid var(--linha);background:#fff}
-.tabs button.on{background:var(--pinho);color:#fff;border-color:var(--pinho)}
-.pn{background:#fff;border-radius:var(--br);padding:22px;border:1px solid var(--linha);margin-bottom:30px}
-.login{max-width:380px;margin:12vh auto;background:#fff;padding:30px;border-radius:var(--br);border:1px solid var(--linha)}
-.tb{width:100%;border-collapse:collapse}
-.tb th,.tb td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--linha);vertical-align:middle}
-.tb img,.tb .nf{width:64px;height:48px;object-fit:cover;border-radius:6px;background:#d9e2dc;display:grid;place-items:center}
-.tbw{overflow-x:auto}
-.ac{display:flex;gap:6px;flex-wrap:wrap}
-.f2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 16px}
-.fot{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.fot div{position:relative}
-.fot img{width:96px;height:72px;object-fit:cover;border-radius:8px;display:block}
-.fot button{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border-radius:50%;border:0;background:#b83a2e;color:#fff;font-size:.8rem}
-.fot i{position:absolute;left:4px;bottom:4px;background:var(--latao);color:#fff;font-size:.7rem;padding:0 6px;border-radius:4px;font-style:normal}
-.aviso{background:#fff7e0;border:1px solid #ecd48a;border-radius:8px;padding:12px;margin:12px 0;font-size:.93rem}
-.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--tinta);color:#fff;padding:11px 20px;border-radius:8px;z-index:99}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataForge BR | Gerador Universal de Dados Fictícios</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#060913',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        neon: {
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            purple: '#8b5cf6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar for Dark Cyberpunk Aesthetic */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Subtle Neon Glow Effects */
+        .glow-emerald {
+            box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.25);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.25);
+        }
+        
+        /* Custom Range Slider */
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: #1e293b;
+            height: 6px;
+            border-radius: 4px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #10b981;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-dark-950 text-slate-200 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200 min-h-screen flex flex-col">
 
-<!-- ================= SITE DO VISITANTE ================= -->
-<div id="site">
-  <header class="top"><div class="wrap">
-    <a class="logo" href="#" id="logoNome"></a>
-    <nav><a href="#imoveis">Imóveis</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a class="btn ouro peq" id="zapTopo" target="_blank" rel="noopener">WhatsApp</a></nav>
-  </div></header>
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-  <section class="hero"><div class="wrap">
-    <h1>Encontre a casa certa para a sua família</h1>
-    <p id="heroTxt"></p>
-    <div class="acoes"><a class="btn ouro" href="#imoveis">Ver imóveis disponíveis</a><a class="btn zap" id="zapHero" target="_blank" rel="noopener">Falar com a corretora</a></div>
-  </div></section>
+    <!-- Mobile Header -->
+    <header class="lg:hidden bg-dark-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between sticky top-0 z-30">
+        <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-dark-950 font-bold shadow-lg">
+                <i class="ph-bold ph-database text-lg"></i>
+            </div>
+            <span class="font-bold text-lg tracking-tight text-white">DataForge <span class="text-emerald-400">BR</span></span>
+        </div>
+        <button id="mobile-menu-btn" class="p-2 rounded-lg bg-dark-800 text-slate-300 hover:text-white border border-slate-700">
+            <i class="ph ph-list text-xl"></i>
+        </button>
+    </header>
 
-  <main class="wrap" id="imoveis">
-    <div class="busca">
-      <input id="q" type="search" placeholder="Buscar por bairro, cidade ou palavra" aria-label="Buscar" oninput="renderGrid()">
-      <select id="fFin" aria-label="Finalidade" onchange="renderGrid()"><option value="">Comprar ou alugar</option><option>Venda</option><option>Aluguel</option></select>
-      <select id="fTipo" aria-label="Tipo" onchange="renderGrid()"><option value="">Todos os tipos</option></select>
-      <select id="fQuartos" aria-label="Quartos" onchange="renderGrid()"><option value="0">Quartos</option><option value="1">1 ou mais</option><option value="2">2 ou mais</option><option value="3">3 ou mais</option><option value="4">4 ou mais</option></select>
-      <select id="fPreco" aria-label="Preço máximo" onchange="renderGrid()"><option value="0">Qualquer preço</option><option value="200000">até R$ 200 mil</option><option value="400000">até R$ 400 mil</option><option value="700000">até R$ 700 mil</option><option value="1000000">até R$ 1 milhão</option></select>
+    <!-- Main Layout Wrapper -->
+    <div class="flex-1 flex flex-col lg:flex-row relative">
+
+        <!-- Sidebar Backdrop (Mobile) -->
+        <div id="sidebar-backdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-30 hidden lg:hidden"></div>
+
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="fixed lg:sticky top-0 left-0 z-40 h-screen w-72 bg-dark-900 border-r border-slate-800/80 flex flex-col transition-transform duration-300 -translate-x-full lg:translate-x-0">
+            <!-- Brand Header -->
+            <div class="p-5 border-b border-slate-800/80 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-cyan-500 to-purple-600 flex items-center justify-center text-dark-950 font-bold shadow-lg shadow-emerald-500/10">
+                        <i class="ph-bold ph-terminal-window text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-lg leading-none text-white tracking-tight">DataForge <span class="text-emerald-400">BR</span></h1>
+                        <span class="text-[11px] font-mono text-slate-400 tracking-wider uppercase">Suite QA & Dev v2.6</span>
+                    </div>
+                </div>
+                <button id="close-sidebar-btn" class="lg:hidden p-1.5 text-slate-400 hover:text-white">
+                    <i class="ph ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Search Filter -->
+            <div class="p-4 border-b border-slate-800/60">
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="sidebar-search" placeholder="Buscar gerador..." 
+                        class="w-full bg-dark-950/70 border border-slate-800 rounded-lg pl-9 pr-3 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500/60 transition-colors">
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav id="nav-menu" class="flex-1 overflow-y-auto p-3 space-y-1">
+                <!-- Populated dynamically via JS -->
+            </nav>
+
+            <!-- Sidebar Footer Stats -->
+            <div class="p-4 border-t border-slate-800/80 bg-dark-950/40">
+                <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                    <span>Geradores Ativos</span>
+                    <span class="font-mono text-emerald-400 font-semibold">48 Módulos</span>
+                </div>
+                <div class="w-full bg-dark-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-emerald-500 to-cyan-500 w-full h-full"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 flex flex-col min-w-0 bg-dark-950">
+            
+            <!-- Top Control Bar -->
+            <div class="bg-dark-900/50 border-b border-slate-800/80 px-4 sm:px-8 py-5">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span id="category-badge">PERFIL COMPLETO</span>
+                        </div>
+                        <h2 id="category-title" class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Gerador de Pessoa Completa</h2>
+                        <p id="category-desc" class="text-sm text-slate-400 mt-1">Gere uma identidade brasileira completa e consistente com documentos, endereço, finanças e veículo.</p>
+                    </div>
+
+                    <!-- Global Formatting & Batch Controls -->
+                    <div class="flex flex-wrap items-center gap-3">
+                        <!-- Punctuation Toggle -->
+                        <label id="punctuation-wrapper" class="flex items-center gap-2.5 bg-dark-800/90 border border-slate-700/80 px-3.5 py-2.5 rounded-xl cursor-pointer hover:border-slate-600 transition-colors select-none">
+                            <input type="checkbox" id="global-punctuation" checked class="sr-only peer">
+                            <div class="w-9 h-5 bg-dark-950 rounded-full peer peer-checked:bg-emerald-500/20 border border-slate-700 peer-checked:border-emerald-500 relative transition-all after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-slate-400 peer-checked:after:bg-emerald-400 after:rounded-full after:h-3.5 after:w-3.5 after:transition-all peer-checked:after:translate-x-4"></div>
+                            <span class="text-xs font-medium text-slate-300">Com Pontuação</span>
+                        </label>
+
+                        <!-- Quick Regenerate Button -->
+                        <button id="btn-regenerate-all" class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-400 hover:to-cyan-500 text-dark-950 font-semibold px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/10 transition-all active:scale-95 cursor-pointer">
+                            <i class="ph-bold ph-arrows-clockwise text-lg"></i>
+                            <span>Gerar Novos Dados</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Generator Workspace -->
+            <div class="flex-1 px-4 sm:px-8 py-6 max-w-7xl w-full mx-auto space-y-8">
+                
+                <!-- Section 1: Interactive Single/Category Cards -->
+                <div id="generator-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                    <!-- Dynamic Cards injected here -->
+                </div>
+
+                <!-- Section 2: Batch Generator & Export Engine -->
+                <section class="bg-dark-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                    <div class="p-5 sm:p-6 border-b border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-gradient-to-r from-dark-900 via-dark-900 to-slate-900/80">
+                        <div class="flex items-start sm:items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 shrink-0">
+                                <i class="ph-bold ph-stack text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Gerador em Lote & Exportação (Bulk Engine)</h3>
+                                <p class="text-xs text-slate-400">Gere múltiplos registros estruturados da categoria atual e exporte em JSON, CSV ou TXT.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <!-- Item selector for single-type batch if applicable -->
+                            <select id="batch-field-select" class="bg-dark-950 border border-slate-700 text-slate-200 text-xs font-medium rounded-xl px-3 py-2.5 focus:outline-none focus:border-purple-500">
+                                <option value="ALL">Todos os campos da categoria</option>
+                            </select>
+
+                            <!-- Quantity Selector -->
+                            <div class="flex items-center bg-dark-950 border border-slate-700 rounded-xl overflow-hidden">
+                                <span class="text-xs text-slate-400 pl-3 pr-1">Qtd:</span>
+                                <select id="batch-quantity" class="bg-transparent text-slate-200 text-xs font-mono font-bold py-2.5 pr-3 pl-1 focus:outline-none">
+                                    <option value="5">5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+
+                            <!-- Format Selector -->
+                            <select id="batch-format" class="bg-dark-950 border border-slate-700 text-cyan-400 font-mono text-xs font-semibold rounded-xl px-3 py-2.5 focus:outline-none focus:border-cyan-500">
+                                <option value="json">JSON</option>
+                                <option value="csv">CSV</option>
+                                <option value="txt">TXT</option>
+                            </select>
+
+                            <!-- Generate Batch CTA -->
+                            <button id="btn-generate-batch" class="flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all active:scale-95 cursor-pointer shadow-lg shadow-purple-600/20">
+                                <i class="ph-bold ph-lightning"></i>
+                                <span>Gerar Lote</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Batch Output Preview -->
+                    <div class="p-4 sm:p-6 bg-dark-950/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Saída do Lote</span>
+                                <span id="batch-count-badge" class="text-[11px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md">10 registros</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button id="btn-copy-batch" class="flex items-center gap-1.5 text-xs font-medium bg-dark-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3 py-1.5 rounded-lg transition-colors cursor-pointer">
+                                    <i class="ph ph-copy"></i>
+                                    <span>Copiar Lote</span>
+                                </button>
+                                <button id="btn-download-batch" class="flex items-center gap-1.5 text-xs font-medium bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded-lg transition-colors cursor-pointer">
+                                    <i class="ph ph-download-simple"></i>
+                                    <span>Baixar Arquivo</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <textarea id="batch-output" readonly rows="10" 
+                                class="w-full bg-dark-950 border border-slate-800/90 rounded-xl p-4 font-mono text-xs sm:text-sm text-emerald-300/90 focus:outline-none focus:border-slate-700 resize-y leading-relaxed"></textarea>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Discreet Legal Disclaimer Footer -->
+            <footer class="mt-auto border-t border-slate-800/70 bg-dark-900/40 px-4 sm:px-8 py-4">
+                <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
+                    <div class="flex items-center gap-2 text-center sm:text-left">
+                        <i class="ph-fill ph-shield-warning text-amber-500/80 text-base shrink-0"></i>
+                        <p>
+                            <strong class="text-slate-400">Aviso Legal:</strong> Todos os dados gerados por esta plataforma são fictícios e calculados via algoritmos públicos (Módulo 11, Luhn, EAN-13) exclusivamente para fins de desenvolvimento, testes de software (QA) e homologação. Não possuem vínculo com pessoas físicas ou jurídicas reais.
+                        </p>
+                    </div>
+                    <span class="font-mono text-[11px] text-slate-600 shrink-0">DataForge BR • 100% Client-Side</span>
+                </div>
+            </footer>
+        </main>
     </div>
-    <div class="sec-t"><h2>Imóveis disponíveis</h2><span id="cont"></span></div>
-    <div class="grid" id="grid"></div>
 
-    <section class="sobre" id="sobre">
-      <div><h2>Sobre a corretora</h2><p id="sobreTxt"></p></div>
-      <div class="cx" id="contato">
-        <h2 style="font-size:1.5rem">Fale comigo</h2>
-        <label for="cNome">Seu nome</label><input id="cNome" autocomplete="name">
-        <label for="cMsg">Mensagem</label><textarea id="cMsg" rows="4" placeholder="Conte o que você procura: tipo de imóvel, bairro, valor..."></textarea>
-        <button class="btn zap" style="margin-top:14px;width:100%" onclick="enviarContato()">Enviar pelo WhatsApp</button>
-        <ul class="dados" id="dados"></ul>
-      </div>
-    </section>
-  </main>
+    <!-- Core Application Logic -->
+    <script>
+        /**
+         * ============================================================================
+         * DATAFORGE BR - CORE ALGORITHMS & DATA POOLS
+         * ============================================================================
+         */
+        const DataPools = {
+            firstNamesM: ['Miguel', 'Arthur', 'Gael', 'Théo', 'Heitor', 'Ravi', 'Davi', 'Bernardo', 'Noah', 'Gabriel', 'Samuel', 'Pedro', 'Anthony', 'Isaac', 'Benício', 'Benjamin', 'Matheus', 'Lucas', 'Joaquim', 'Nicolas', 'Lucca', 'Lorenzo', 'Henrique', 'João', 'Rafael', 'Daniel', 'Murilo', 'Vinícius', 'Eduardo', 'Felipe', 'Gustavo', 'Rodrigo', 'Bruno', 'Thiago', 'Leonardo', 'Caio', 'André', 'Marcelo', 'Ricardo', 'Fernando'],
+            firstNamesF: ['Helena', 'Alice', 'Laura', 'Maria', 'Sophia', 'Manuela', 'Maitê', 'Liz', 'Cecília', 'Isabella', 'Luísa', 'Eloá', 'Heloísa', 'Júlia', 'Ayla', 'Mariana', 'Beatriz', 'Antonella', 'Valentina', 'Maya', 'Clara', 'Lara', 'Gabriela', 'Isabelly', 'Yasmin', 'Camila', 'Letícia', 'Amanda', 'Bruna', 'Fernanda', 'Patrícia', 'Juliana', 'Aline', 'Renata', 'Carolina', 'Natália', 'Vanessa', 'Bianca', 'Larissa', 'Vitória'],
+            lastNames: ['Silva', 'Santos', 'Oliveira', 'Souza', 'Rodrigues', 'Ferreira', 'Alves', 'Pereira', 'Lima', 'Gomes', 'Costa', 'Ribeiro', 'Martins', 'Carvalho', 'Almeida', 'Lopes', 'Soares', 'Fernandes', 'Vieira', 'Barbosa', 'Rocha', 'Dias', 'Nascimento', 'Andrade', 'Moreira', 'Nunes', 'Marques', 'Machado', 'Mendes', 'Freitas', 'Cardoso', 'Ramos', 'Gonçalves', 'Santana', 'Teixeira', 'Moura', 'Cavalcanti', 'Araújo', 'Correia', 'Pinto'],
+            bloodTypes: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
+            maritalStatuses: ['Solteiro(a)', 'Casado(a)', 'Divorciado(a)', 'Viúvo(a)', 'União Estável'],
+            professions: ['Engenheiro de Software', 'Analista de Sistemas', 'Médico(a)', 'Advogado(a)', 'Arquiteto(a)', 'Contador(a)', 'Professor(a)', 'Enfermeiro(a)', 'Designer UX/UI', 'Administrador(a)', 'Psicólogo(a)', 'Farmacêutico(a)', 'Engenheiro Civil', 'Jornalista', 'Cientista de Dados', 'Gerente de Projetos', 'Economista', 'Fisioterapeuta', 'Dentista', 'Consultor Financeiro'],
+            nationalities: ['Brasileira', 'Brasileira (Naturalizado)', 'Portuguesa', 'Italiana', 'Espanhola', 'Argentina'],
+            zodiacSigns: [
+                { name: 'Capricórnio', start: [12, 22], end: [1, 19] },
+                { name: 'Aquário', start: [1, 20], end: [2, 18] },
+                { name: 'Peixes', start: [2, 19], end: [3, 20] },
+                { name: 'Áries', start: [3, 21], end: [4, 19] },
+                { name: 'Touro', start: [4, 20], end: [5, 20] },
+                { name: 'Gêmeos', start: [5, 21], end: [6, 20] },
+                { name: 'Câncer', start: [6, 21], end: [7, 22] },
+                { name: 'Leão', start: [7, 23], end: [8, 22] },
+                { name: 'Virgem', start: [8, 23], end: [9, 22] },
+                { name: 'Libra', start: [9, 23], end: [10, 22] },
+                { name: 'Escorpião', start: [10, 23], end: [11, 21] },
+                { name: 'Sagitário', start: [11, 22], end: [12, 21] }
+            ],
+            streets: ['Rua das Flores', 'Avenida Paulista', 'Rua Augusta', 'Avenida Brasil', 'Rua Quinze de Novembro', 'Avenida Atlântica', 'Rua Sete de Setembro', 'Alameda Santos', 'Rua Oscar Freire', 'Avenida Rio Branco', 'Rua Barão do Rio Branco', 'Rua Dom Pedro II', 'Avenida Getúlio Vargas', 'Rua Tiradentes', 'Avenida Presidente Vargas', 'Rua Marechal Deodoro', 'Rua Voluntários da Pátria', 'Avenida Independência'],
+            neighborhoods: ['Centro', 'Jardins', 'Bela Vista', 'Vila Mariana', 'Pinheiros', 'Moema', 'Copacabana', 'Ipanema', 'Botafogo', 'Savassi', 'Funcionários', 'Batel', 'Água Verde', 'Moinhos de Vento', 'Meireles', 'Aldeota', 'Boa Viagem', 'Pituba'],
+            cities: [
+                { city: 'São Paulo', uf: 'SP', ddd: '11', cepPrefix: '01', lat: -23.5505, lng: -46.6333 },
+                { city: 'Rio de Janeiro', uf: 'RJ', ddd: '21', cepPrefix: '20', lat: -22.9068, lng: -43.1729 },
+                { city: 'Belo Horizonte', uf: 'MG', ddd: '31', cepPrefix: '30', lat: -19.9167, lng: -43.9345 },
+                { city: 'Curitiba', uf: 'PR', ddd: '41', cepPrefix: '80', lat: -25.4284, lng: -49.2733 },
+                { city: 'Ponta Grossa', uf: 'PR', ddd: '42', cepPrefix: '84', lat: -25.0916, lng: -50.1668 },
+                { city: 'Porto Alegre', uf: 'RS', ddd: '51', cepPrefix: '90', lat: -30.0346, lng: -51.2177 },
+                { city: 'Florianópolis', uf: 'SC', ddd: '48', cepPrefix: '88', lat: -27.5954, lng: -48.5480 },
+                { city: 'Salvador', uf: 'BA', ddd: '71', cepPrefix: '40', lat: -12.9714, lng: -38.5014 },
+                { city: 'Fortaleza', uf: 'CE', ddd: '85', cepPrefix: '60', lat: -3.7172, lng: -38.5433 },
+                { city: 'Recife', uf: 'PE', ddd: '81', cepPrefix: '50', lat: -8.0476, lng: -34.8770 },
+                { city: 'Brasília', uf: 'DF', ddd: '61', cepPrefix: '70', lat: -15.7975, lng: -47.8919 },
+                { city: 'Goiânia', uf: 'GO', ddd: '62', cepPrefix: '74', lat: -16.6869, lng: -49.2648 },
+                { city: 'Manaus', uf: 'AM', ddd: '92', cepPrefix: '69', lat: -3.1190, lng: -60.0217 },
+                { city: 'Belém', uf: 'PA', ddd: '91', cepPrefix: '66', lat: -1.4558, lng: -48.4902 }
+            ],
+            banks: [
+                { code: '001', name: 'Banco do Brasil S.A.' },
+                { code: '033', name: 'Banco Santander (Brasil) S.A.' },
+                { code: '104', name: 'Caixa Econômica Federal' },
+                { code: '237', name: 'Banco Bradesco S.A.' },
+                { code: '341', name: 'Itaú Unibanco S.A.' },
+                { code: '260', name: 'Nu Pagamentos S.A. (Nubank)' },
+                { code: '077', name: 'Banco Inter S.A.' },
+                { code: '336', name: 'Banco C6 S.A.' },
+                { code: '290', name: 'PagSeguro Internet S.A.' },
+                { code: '208', name: 'Banco BTG Pactual S.A.' }
+            ],
+            vehicles: [
+                { brand: 'Volkswagen', models: ['Polo Highline', 'T-Cross Comfortline', 'Nivus HL', 'Virtus Exclusive', 'Golf GTI'] },
+                { brand: 'Chevrolet', models: ['Onix Premier', 'Tracker LTZ', 'Cruze Sport6', 'S10 High Country', 'Spin Activ'] },
+                { brand: 'Fiat', models: ['Pulse Audace', 'Fastback Impetus', 'Strada Volcano', 'Toro Ultra', 'Argo Trekking'] },
+                { brand: 'Hyundai', models: ['HB20 Platinum', 'Creta Ultimate', 'Tucson GLS', 'Santa Fe'] },
+                { brand: 'Toyota', models: ['Corolla Altis Hybrid', 'Corolla Cross XRX', 'Hilux SRX', 'Yaris XLS'] },
+                { brand: 'Honda', models: ['Civic Touring', 'HR-V Advance', 'City Hatchback', 'ZR-V'] },
+                { brand: 'Jeep', models: ['Compass Longitude', 'Renegade Trailhawk', 'Commander Overland'] },
+                { brand: 'BYD', models: ['Dolphin Plus', 'Seal AWD', 'Song Plus DM-i', 'Yuan Plus'] }
+            ],
+            carColors: ['Branco Polar', 'Preto Ninja', 'Prata Lunar', 'Cinza Grafite', 'Azul Biscay', 'Vermelho Montecarlo', 'Verde Recon'],
+            companyTypes: ['LTDA', 'S.A.', 'SLU', 'ME', 'EPP'],
+            companySectors: ['Tecnologia da Informação', 'Logística e Transportes', 'Comércio Varejista', 'Consultoria Empresarial', 'Engenharia e Construção', 'Alimentos e Bebidas', 'Serviços Financeiros', 'Saúde e Diagnósticos', 'Energia Renovável', 'Agronegócio'],
+            legalNatures: [
+                '206-2 - Sociedade Empresária Limitada',
+                '205-4 - Sociedade Anônima Fechada',
+                '213-5 - Empresário (Individual)',
+                '230-5 - Empresa Individual de Resp. Limitada',
+                '224-0 - Sociedade Simples Limitada'
+            ],
+            companySizes: ['MEI - Microempreendedor Individual', 'ME - Microempresa', 'EPP - Empresa de Pequeno Porte', 'DEMAIS - Médio/Grande Porte'],
+            userAgents: [
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15',
+                'Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0',
+                'Mozilla/5.0 (iPhone; CPU iPhone OS 17_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1',
+                'Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.127 Mobile Safari/537.36'
+            ],
+            loremWords: [
+                'sistema', 'arquitetura', 'dados', 'servidor', 'interface', 'protocolo', 'algoritmo', 'desenvolvimento',
+                'infraestrutura', 'nuvem', 'segurança', 'criptografia', 'latência', 'escalabilidade', 'integração',
+                'requisição', 'resposta', 'banco', 'instância', 'módulo', 'componente', 'variável', 'estrutura',
+                'processamento', 'otimização', 'rede', 'pacote', 'autenticação', 'token', 'validação', 'homologação',
+                'produção', 'ambiente', 'container', 'microsserviço', 'monitoramento', 'telemetria', 'desempenho'
+            ]
+        };
 
-  <footer><div class="wrap"><span id="rodape"></span><a href="#admin">Área da corretora</a></div></footer>
-  <a class="zapfix" id="zapFix" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬</a>
-</div>
+        /**
+         * ============================================================================
+         * HELPER UTILITIES & MATHEMATICAL GENERATORS
+         * ============================================================================
+         */
+        const Utils = {
+            randInt: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+            pick: (arr) => arr[Math.floor(Math.random() * arr.length)],
+            pad: (num, size = 2) => String(num).padStart(size, '0'),
+            digits: (len) => Array.from({ length: len }, () => Math.floor(Math.random() * 10)).join(''),
+            letters: (len) => {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                return Array.from({ length: len }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
+            },
+            hex: (len) => {
+                const chars = '0123456789abcdef';
+                return Array.from({ length: len }, () => chars[Math.floor(Math.random() * 16)]).join('');
+            },
+            slugify: (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '.').replace(/\.+/g, '.').replace(/^\.|\.$/g, '')
+        };
 
-<!-- ================= ÁREA ADMIN ================= -->
-<div id="admin" hidden></div>
-<div id="modal" class="mod" hidden></div>
+        const Generators = {
+            // --- 1. DOCUMENTOS BRASILEIROS ---
+            cpf(punctuated = true) {
+                const n = Array.from({ length: 9 }, () => Utils.randInt(0, 9));
+                // Evita CPFs com todos dígitos iguais
+                if (n.every(d => d === n[0])) n[8] = (n[0] + 1) % 10;
 
-<script>
-/* ===== CONFIGURAÇÃO: troque a senha aqui antes de publicar ===== */
-const SENHA = 'taniclei123';
-/* =============================================================== */
-const KEY = 'taniclei_dados_v1';
-const TIPOS = ['Casa','Apartamento','Terreno','Sobrado','Chácara','Comercial'];
-const DEMO = {
-  config:{nome:'Taniclei Pontes Ribas',creci:'CRECI 00000',whats:'5542999999999',email:'',instagram:'',cidade:'Ponta Grossa - PR',
-    sobre:'Sou Taniclei Pontes Ribas, corretora de imóveis. Ajudo famílias a comprar, vender e alugar com segurança, do primeiro contato até a entrega das chaves.\n\nAtendimento próximo, honesto e sem pressa. Me chame para conversar sobre o imóvel que você procura.'},
-  imoveis:[
-    {id:'d1',titulo:'Casa de 3 quartos com quintal',finalidade:'Venda',tipo:'Casa',preco:380000,bairro:'Oficinas',cidade:'Ponta Grossa',quartos:3,banheiros:2,vagas:2,area:150,descricao:'Casa ampla, com quintal gramado, churrasqueira e cozinha planejada.\nExemplo: apague e cadastre os seus imóveis na área da corretora.',fotos:[],destaque:true,status:'disponivel'},
-    {id:'d2',titulo:'Apartamento próximo ao centro',finalidade:'Aluguel',tipo:'Apartamento',preco:1800,bairro:'Centro',cidade:'Ponta Grossa',quartos:2,banheiros:1,vagas:1,area:68,descricao:'Apartamento arejado, com sacada e portaria.',fotos:[],destaque:false,status:'disponivel'},
-    {id:'d3',titulo:'Terreno plano 360 m²',finalidade:'Venda',tipo:'Terreno',preco:150000,bairro:'Uvaranas',cidade:'Ponta Grossa',quartos:0,banheiros:0,vagas:0,area:360,descricao:'Terreno plano, documentação em dia, pronto para construir.',fotos:[],destaque:false,status:'disponivel'}
-  ]};
-let D, fotosTmp = [], editId = null, aba = 'lista';
-const $ = s => document.querySelector(s);
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const brl = v => Number(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
-const zapNum = () => String(D.config.whats||'').replace(/\D/g,'');
-const zapLink = t => `https://wa.me/${zapNum()}?text=${encodeURIComponent(t)}`;
-function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.append(t);setTimeout(()=>t.remove(),2600)}
+                let d1 = n.reduce((acc, val, idx) => acc + val * (10 - idx), 0) % 11;
+                d1 = d1 < 2 ? 0 : 11 - d1;
+                n.push(d1);
 
-async function load(){
-  try{const l=localStorage.getItem(KEY);if(l){D=JSON.parse(l);return}}catch(e){}
-  try{const r=await fetch('imoveis.json?'+Date.now());if(r.ok){D=await r.json();return}}catch(e){}
-  D=JSON.parse(JSON.stringify(DEMO));
-}
-function save(){
-  try{localStorage.setItem(KEY,JSON.stringify(D));return true}
-  catch(e){alert('O navegador ficou sem espaço. Use menos fotos por imóvel ou apague imóveis antigos.');return false}
-}
+                let d2 = n.reduce((acc, val, idx) => acc + val * (11 - idx), 0) % 11;
+                d2 = d2 < 2 ? 0 : 11 - d2;
+                n.push(d2);
 
-/* ===== Site do visitante ===== */
-function renderSite(){
-  const c=D.config;
-  document.title=`${c.nome} | Corretora de Imóveis`;
-  $('#logoNome').textContent=c.nome;
-  $('#heroTxt').textContent=`${c.nome}, corretora de imóveis em ${c.cidade}. Veja as casas e imóveis disponíveis e fale direto comigo.`;
-  $('#sobreTxt').textContent=c.sobre;
-  const base=zapLink('Olá, vim pelo seu site e gostaria de mais informações.');
-  ['#zapTopo','#zapHero','#zapFix'].forEach(s=>$(s).href=base);
-  $('#dados').innerHTML=[c.whats&&`📱 WhatsApp: ${esc(c.whats)}`,c.email&&`✉️ ${esc(c.email)}`,c.instagram&&`📷 ${esc(c.instagram)}`,`📍 ${esc(c.cidade)}`].filter(Boolean).map(x=>`<li>${x}</li>`).join('');
-  $('#rodape').textContent=`© ${new Date().getFullYear()} ${c.nome} · ${c.creci}`;
-  const tipos=[...new Set([...TIPOS,...D.imoveis.map(i=>i.tipo)])];
-  const sel=$('#fTipo'),v=sel.value;
-  sel.innerHTML='<option value="">Todos os tipos</option>'+tipos.map(t=>`<option>${esc(t)}</option>`).join('');sel.value=v;
-  renderGrid();
-}
-function card(i){
-  const f=i.fotos&&i.fotos[0];
-  return `<article class="card" tabindex="0" onclick="abrir('${i.id}')" onkeydown="if(event.key==='Enter')abrir('${i.id}')">
-  <div class="ph">${f?`<img src="${f}" loading="lazy" alt="${esc(i.titulo)}">`:'🏠'}
-  <b class="tag">${esc(i.finalidade)}</b>${i.destaque?'<b class="tag d">Destaque</b>':''}
-  ${i.status==='vendido'?`<div class="vend">${i.finalidade==='Aluguel'?'Alugado':'Vendido'}</div>`:''}</div>
-  <div class="cb"><div class="pr">${brl(i.preco)}${i.finalidade==='Aluguel'?' <small>/mês</small>':''}</div>
-  <h3>${esc(i.titulo)}</h3><p class="loc">${esc(i.bairro)}, ${esc(i.cidade)}</p>
-  <div class="ft"><span>🛏 ${i.quartos||0}</span><span>🚿 ${i.banheiros||0}</span><span>🚗 ${i.vagas||0}</span><span>📐 ${i.area||0} m²</span></div></div></article>`;
-}
-function renderGrid(){
-  const q=$('#q').value.toLowerCase().trim(),fin=$('#fFin').value,tp=$('#fTipo').value,qt=+$('#fQuartos').value,pm=+$('#fPreco').value;
-  const l=D.imoveis.filter(i=>(!fin||i.finalidade===fin)&&(!tp||i.tipo===tp)&&(i.quartos||0)>=qt&&(!pm||i.preco<=pm)&&
-    (!q||[i.titulo,i.bairro,i.cidade,i.descricao,i.tipo].join(' ').toLowerCase().includes(q)))
-    .sort((a,b)=>(a.status==='vendido')-(b.status==='vendido')||(b.destaque-a.destaque));
-  $('#cont').textContent=l.length+(l.length===1?' imóvel':' imóveis');
-  $('#grid').innerHTML=l.length?l.map(card).join(''):'<p class="vazio">Nenhum imóvel encontrado com esses filtros. Tente limpar a busca ou fale comigo no WhatsApp.</p>';
-}
-function abrir(id){
-  const i=D.imoveis.find(x=>x.id===id);if(!i)return;
-  const fs=i.fotos||[];
-  $('#modal').innerHTML=`<div class="box"><button class="fechar" onclick="fechar()" aria-label="Fechar">✕</button>
-  <div class="gal" id="galP">${fs[0]?`<img src="${fs[0]}" alt="">`:'🏠'}</div>
-  ${fs.length>1?`<div class="mini">${fs.map((f,n)=>`<img src="${f}" class="${n?'':'on'}" onclick="foto(${n},this)" alt="Foto ${n+1}">`).join('')}</div>`:''}
-  <div class="mb"><div class="pr" style="font-size:1.7rem">${brl(i.preco)}${i.finalidade==='Aluguel'?' <small>/mês</small>':''}</div>
-  <h2>${esc(i.titulo)}</h2><p class="loc">${esc(i.tipo)} para ${esc(i.finalidade.toLowerCase())} · ${esc(i.bairro)}, ${esc(i.cidade)}</p>
-  <div class="fatos"><div><b>${i.quartos||0}</b>Quartos</div><div><b>${i.banheiros||0}</b>Banheiros</div><div><b>${i.vagas||0}</b>Vagas</div><div><b>${i.area||0} m²</b>Área</div></div>
-  <p class="desc">${esc(i.descricao)}</p>
-  <a class="btn zap" target="_blank" rel="noopener" href="${zapLink(`Olá! Tenho interesse no imóvel "${i.titulo}" (${i.bairro}) anunciado no seu site.`)}">Tenho interesse, chamar no WhatsApp</a></div></div>`;
-  window._fs=fs;$('#modal').hidden=false;document.body.style.overflow='hidden';
-}
-function foto(n,el){$('#galP').innerHTML=`<img src="${window._fs[n]}" alt="">`;document.querySelectorAll('.mini img').forEach(x=>x.classList.remove('on'));el.classList.add('on')}
-function fechar(){$('#modal').hidden=true;document.body.style.overflow=''}
-$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')fechar()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar()});
-function enviarContato(){
-  const n=$('#cNome').value.trim(),m=$('#cMsg').value.trim();
-  if(!m){toast('Escreva uma mensagem');return}
-  window.open(zapLink(`Olá, sou ${n||'um visitante do site'}. ${m}`),'_blank');
-}
+                const raw = n.join('');
+                return punctuated ? raw.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') : raw;
+            },
 
-/* ===== Área da corretora ===== */
-const logado=()=>sessionStorage.getItem('adm')==='1';
-function rota(){
-  const adm=location.hash==='#admin';
-  $('#site').hidden=adm;$('#admin').hidden=!adm;
-  if(adm){window.scrollTo(0,0);renderAdmin()}
-}
-function renderAdmin(){
-  const A=$('#admin');
-  if(!logado()){
-    A.innerHTML=`<div class="login"><h2 style="font-size:1.7rem">Área da corretora</h2><p style="color:var(--cinza);margin:6px 0 14px">Digite a senha para gerenciar os imóveis.</p>
-    <div class="fm"><label for="sn">Senha</label><input id="sn" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')entrar()"></div>
-    <button class="btn" style="width:100%;margin-top:16px" onclick="entrar()">Entrar</button>
-    <p style="margin-top:14px;text-align:center"><a href="#">Voltar ao site</a></p></div>`;
-    return;
-  }
-  const tabs=[['lista','Meus imóveis'],['form',editId?'Editar imóvel':'Cadastrar imóvel'],['conf','Meus dados'],['pub','Publicar no site']];
-  A.innerHTML=`<div class="ab"><div class="wrap"><b style="font-size:1.1rem">Painel de ${esc(D.config.nome)}</b>
-  <span><a class="btn sec peq" href="#">Ver site</a> <button class="btn sec peq" onclick="sair()">Sair</button></span></div></div>
-  <div class="wrap"><div class="tabs">${tabs.map(([k,t])=>`<button class="${aba===k?'on':''}" onclick="irAba('${k}')">${t}</button>`).join('')}</div>
-  <div class="pn" id="painel"></div></div>`;
-  ({lista:pLista,form:pForm,conf:pConf,pub:pPub})[aba]();
-}
-function entrar(){if($('#sn').value===SENHA){sessionStorage.setItem('adm','1');renderAdmin()}else toast('Senha incorreta')}
-function sair(){sessionStorage.removeItem('adm');location.hash='';}
-function irAba(k){if(k==='form'&&aba!=='form'){editId=null;fotosTmp=[]}aba=k;renderAdmin()}
+            cnpj(punctuated = true) {
+                const n = [
+                    ...Array.from({ length: 8 }, () => Utils.randInt(0, 9)),
+                    0, 0, 0, 1 // Matriz 0001
+                ];
+                const w1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+                let d1 = n.reduce((acc, val, idx) => acc + val * w1[idx], 0) % 11;
+                d1 = d1 < 2 ? 0 : 11 - d1;
+                n.push(d1);
 
-function pLista(){
-  const l=D.imoveis;
-  $('#painel').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px"><h2 style="font-size:1.5rem">${l.length} ${l.length===1?'imóvel cadastrado':'imóveis cadastrados'}</h2><button class="btn ouro" onclick="novo()">+ Cadastrar imóvel</button></div>
-  ${l.length?`<div class="tbw"><table class="tb"><thead><tr><th></th><th>Imóvel</th><th>Preço</th><th>Situação</th><th>Ações</th></tr></thead><tbody>
-  ${l.map(i=>`<tr><td>${i.fotos&&i.fotos[0]?`<img src="${i.fotos[0]}" alt="">`:'<div class="nf">🏠</div>'}</td>
-  <td><b>${esc(i.titulo)}</b><br><small style="color:var(--cinza)">${esc(i.tipo)} · ${esc(i.finalidade)} · ${esc(i.bairro)}${i.destaque?' · ⭐ Destaque':''}</small></td>
-  <td>${brl(i.preco)}</td><td>${i.status==='vendido'?(i.finalidade==='Aluguel'?'Alugado':'Vendido'):'Disponível'}</td>
-  <td><div class="ac"><button class="btn sec peq" onclick="editar('${i.id}')">Editar</button><button class="btn sec peq" onclick="alt('${i.id}')">${i.status==='vendido'?'Reabrir':'Marcar '+(i.finalidade==='Aluguel'?'alugado':'vendido')}</button><button class="btn red peq" onclick="apagar('${i.id}')">Excluir</button></div></td></tr>`).join('')}
-  </tbody></table></div>`:'<p class="vazio">Nenhum imóvel ainda. Clique em “Cadastrar imóvel” para começar.</p>'}`;
-}
-function novo(){editId=null;fotosTmp=[];aba='form';renderAdmin()}
-function editar(id){editId=id;fotosTmp=[...(D.imoveis.find(i=>i.id===id).fotos||[])];aba='form';renderAdmin()}
-function alt(id){const i=D.imoveis.find(x=>x.id===id);i.status=i.status==='vendido'?'disponivel':'vendido';save();renderAdmin();toast('Situação atualizada')}
-function apagar(id){if(confirm('Excluir este imóvel? Isso não pode ser desfeito.')){D.imoveis=D.imoveis.filter(i=>i.id!==id);save();renderAdmin();toast('Imóvel excluído')}}
+                const w2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+                let d2 = n.reduce((acc, val, idx) => acc + val * w2[idx], 0) % 11;
+                d2 = d2 < 2 ? 0 : 11 - d2;
+                n.push(d2);
 
-function pForm(){
-  const i=editId?D.imoveis.find(x=>x.id===editId):{finalidade:'Venda',tipo:'Casa',status:'disponivel',cidade:D.config.cidade.split(' - ')[0]};
-  const num=(id,l,v)=>`<div><label for="${id}">${l}</label><input id="${id}" type="number" min="0" value="${v??''}"></div>`;
-  $('#painel').innerHTML=`<div class="fm"><div class="f2">
-  <div style="grid-column:1/-1"><label for="f_titulo">Título do anúncio</label><input id="f_titulo" value="${esc(i.titulo)}" placeholder="Ex.: Casa de 3 quartos com quintal"></div>
-  <div><label for="f_fin">Finalidade</label><select id="f_fin"><option ${i.finalidade==='Venda'?'selected':''}>Venda</option><option ${i.finalidade==='Aluguel'?'selected':''}>Aluguel</option></select></div>
-  <div><label for="f_tipo">Tipo</label><select id="f_tipo">${TIPOS.map(t=>`<option ${i.tipo===t?'selected':''}>${t}</option>`).join('')}</select></div>
-  ${num('f_preco','Preço (R$)',i.preco)}
-  <div><label for="f_bairro">Bairro</label><input id="f_bairro" value="${esc(i.bairro)}"></div>
-  <div><label for="f_cidade">Cidade</label><input id="f_cidade" value="${esc(i.cidade)}"></div>
-  ${num('f_q','Quartos',i.quartos)}${num('f_b','Banheiros',i.banheiros)}${num('f_v','Vagas de garagem',i.vagas)}${num('f_a','Área (m²)',i.area)}
-  <div style="grid-column:1/-1"><label for="f_desc">Descrição</label><textarea id="f_desc" rows="5" placeholder="Fale dos cômodos, acabamento, documentação, pontos fortes...">${esc(i.descricao)}</textarea></div>
-  <div style="grid-column:1/-1"><label for="f_fotos">Fotos (a primeira é a capa)</label><input id="f_fotos" type="file" accept="image/*" multiple onchange="addFotos(this)">
-  <div class="fot" id="fot"></div></div>
-  <div><label><input type="checkbox" id="f_dest" style="width:auto" ${i.destaque?'checked':''}> Mostrar como destaque</label></div>
-  <div><label><input type="checkbox" id="f_vend" style="width:auto" ${i.status==='vendido'?'checked':''}> Já vendido / alugado</label></div>
-  </div><div style="margin-top:20px;display:flex;gap:10px"><button class="btn ouro" onclick="salvarImovel()">Salvar imóvel</button><button class="btn sec" onclick="irAba('lista')">Cancelar</button></div></div>`;
-  desenhaFotos();
-}
-function desenhaFotos(){
-  $('#fot').innerHTML=fotosTmp.map((f,n)=>`<div><img src="${f}" alt="">${n?'':'<i>Capa</i>'}<button onclick="rmFoto(${n})" aria-label="Remover foto">✕</button></div>`).join('');
-}
-function rmFoto(n){fotosTmp.splice(n,1);desenhaFotos()}
-function addFotos(inp){
-  [...inp.files].forEach(file=>{
-    const r=new FileReader();
-    r.onload=()=>{const im=new Image();im.onload=()=>{
-      const s=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement('canvas');
-      c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);
-      fotosTmp.push(c.toDataURL('image/jpeg',.72));desenhaFotos()};im.src=r.result};
-    r.readAsDataURL(file);
-  });inp.value='';
-}
-function salvarImovel(){
-  const g=id=>$('#'+id).value.trim();
-  if(!g('f_titulo')||!g('f_preco')){toast('Preencha o título e o preço');return}
-  const o={id:editId||'i'+Date.now(),titulo:g('f_titulo'),finalidade:g('f_fin'),tipo:g('f_tipo'),preco:+g('f_preco'),bairro:g('f_bairro'),cidade:g('f_cidade'),
-    quartos:+g('f_q')||0,banheiros:+g('f_b')||0,vagas:+g('f_v')||0,area:+g('f_a')||0,descricao:g('f_desc'),fotos:fotosTmp,
-    destaque:$('#f_dest').checked,status:$('#f_vend').checked?'vendido':'disponivel'};
-  const idx=D.imoveis.findIndex(x=>x.id===o.id);
-  idx>=0?D.imoveis[idx]=o:D.imoveis.unshift(o);
-  if(!save())return;
-  editId=null;fotosTmp=[];aba='lista';renderAdmin();toast('Imóvel salvo');
-}
-function pConf(){
-  const c=D.config,f=(id,l,v,ph='')=>`<div><label for="${id}">${l}</label><input id="${id}" value="${esc(v)}" placeholder="${ph}"></div>`;
-  $('#painel').innerHTML=`<div class="fm"><div class="f2">${f('c_nome','Nome',c.nome)}${f('c_creci','CRECI',c.creci)}${f('c_whats','WhatsApp (com DDD)',c.whats,'5542999999999')}${f('c_email','E-mail',c.email)}${f('c_insta','Instagram',c.instagram,'@seuperfil')}${f('c_cidade','Cidade de atuação',c.cidade)}
-  <div style="grid-column:1/-1"><label for="c_sobre">Texto “Sobre a corretora”</label><textarea id="c_sobre" rows="6">${esc(c.sobre)}</textarea></div></div>
-  <p class="aviso">No WhatsApp, use o código do país antes: 55 + DDD + número. Exemplo: 5542999998888.</p>
-  <button class="btn ouro" onclick="salvarConf()">Salvar dados</button></div>`;
-}
-function salvarConf(){
-  const g=id=>$('#'+id).value.trim();
-  D.config={nome:g('c_nome'),creci:g('c_creci'),whats:g('c_whats'),email:g('c_email'),instagram:g('c_insta'),cidade:g('c_cidade'),sobre:$('#c_sobre').value};
-  save();renderSite();renderAdmin();toast('Dados salvos');
-}
-function pPub(){
-  $('#painel').innerHTML=`<h2 style="font-size:1.5rem;margin-bottom:8px">Publicar no site</h2>
-  <p class="aviso"><b>Importante:</b> o que você cadastra aqui fica salvo só neste navegador. Para os visitantes verem as mudanças, baixe o arquivo abaixo e envie para o GitHub.</p>
-  <ol style="margin:0 0 18px 20px;display:grid;gap:6px"><li>Clique em <b>Baixar imoveis.json</b>.</li><li>No GitHub, abra o repositório do site e clique em <b>Add file → Upload files</b>.</li><li>Envie o arquivo <b>imoveis.json</b> (substitui o anterior) e clique em <b>Commit changes</b>.</li><li>Em 1 ou 2 minutos o site está atualizado.</li></ol>
-  <div class="ac"><button class="btn ouro" onclick="baixar()">Baixar imoveis.json</button>
-  <label class="btn sec" style="cursor:pointer">Restaurar de um arquivo<input type="file" accept=".json" hidden onchange="importar(this)"></label>
-  <button class="btn red" onclick="zerar()">Apagar dados deste navegador</button></div>`;
-}
-function baixar(){
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(D)],{type:'application/json'}));
-  a.download='imoveis.json';a.click();toast('Arquivo baixado');
-}
-function importar(inp){
-  const f=inp.files[0];if(!f)return;const r=new FileReader();
-  r.onload=()=>{try{const j=JSON.parse(r.result);if(!j.imoveis||!j.config)throw 0;D=j;save();renderSite();renderAdmin();toast('Dados restaurados')}catch(e){alert('Arquivo inválido.')}};
-  r.readAsText(f);
-}
-function zerar(){if(confirm('Apagar tudo que está salvo neste navegador? O site volta ao último imoveis.json publicado.')){localStorage.removeItem(KEY);location.reload()}}
+                const raw = n.join('');
+                return punctuated ? raw.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5') : raw;
+            },
 
-window.addEventListener('hashchange',rota);
-load().then(()=>{renderSite();rota()});
-</script>
+            rg(punctuated = true) {
+                const base = Array.from({ length: 8 }, () => Utils.randInt(0, 9));
+                // Cálculo padrão SSP-SP
+                const sum = base.reduce((acc, val, idx) => acc + val * (2 + idx), 0);
+                const rem = 11 - (sum % 11);
+                const dv = rem === 10 ? 'X' : (rem === 11 ? '0' : String(rem));
+                const raw = base.join('') + dv;
+                return punctuated ? raw.replace(/(\d{2})(\d{3})(\d{3})([\dX])/, '$1.$2.$3-$4') : raw;
+            },
+
+            cnh() {
+                const base = Array.from({ length: 9 }, () => Utils.randInt(0, 9));
+                let dsc = 0;
+                let s1 = base.reduce((acc, val, idx) => acc + val * (9 - idx), 0) % 11;
+                if (s1 >= 10) {
+                    s1 = 0;
+                    dsc = 2;
+                }
+                let s2 = (base.reduce((acc, val, idx) => acc + val * (1 + idx), 0) % 11) - dsc;
+                if (s2 < 0) s2 += 11;
+                if (s2 >= 10) s2 = 0;
+                return base.join('') + s1 + s2;
+            },
+
+            tituloEleitor(punctuated = true) {
+                const seq = Array.from({ length: 8 }, () => Utils.randInt(0, 9));
+                const uf = Utils.randInt(1, 28); // 01 SP a 28 ZZ
+                const ufStr = Utils.pad(uf, 2);
+                const ufDigits = ufStr.split('').map(Number);
+
+                let d1 = seq.reduce((acc, val, idx) => acc + val * (2 + idx), 0) % 11;
+                if (d1 === 10) d1 = 0;
+
+                let d2 = (ufDigits[0] * 7 + ufDigits[1] * 8 + d1 * 9) % 11;
+                if (d2 === 10) d2 = 0;
+
+                const raw = seq.join('') + ufStr + d1 + d2;
+                return punctuated ? raw.replace(/(\d{4})(\d{4})(\d{4})/, '$1 $2 $3') : raw;
+            },
+
+            pis(punctuated = true) {
+                const base = Array.from({ length: 10 }, () => Utils.randInt(0, 9));
+                const weights = [3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+                const rem = base.reduce((acc, val, idx) => acc + val * weights[idx], 0) % 11;
+                const dv = rem < 2 ? 0 : 11 - rem;
+                const raw = base.join('') + dv;
+                return punctuated ? raw.replace(/(\d{3})(\d{5})(\d{2})(\d{1})/, '$1.$2.$3-$4') : raw;
+            },
+
+            certidao(punctuated = true) {
+                // Matrícula CNJ 32 dígitos: Serventia(6) + Acervo(2) + Serviço(2) + Ano(4) + Tipo(1: 1-Nasc, 2-Casam, 3-Óbito) + Livro(5) + Folha(3) + Termo(7) + DV(2)
+                const serventia = Utils.digits(6);
+                const acervo = '01';
+                const servico = '55';
+                const ano = String(Utils.randInt(1980, 2025));
+                const tipo = String(Utils.randInt(1, 3));
+                const livro = Utils.pad(Utils.randInt(1, 999), 5);
+                const folha = Utils.pad(Utils.randInt(1, 300), 3);
+                const termo = Utils.pad(Utils.randInt(1, 9999999), 7);
+                const base30 = serventia + acervo + servico + ano + tipo + livro + folha + termo;
+
+                // Módulo 11 ponderado de 2 a 10
+                const calcDV = (str) => {
+                    let mult = 2;
+                    let sum = 0;
+                    for (let i = str.length - 1; i >= 0; i--) {
+                        sum += parseInt(str[i], 10) * mult;
+                        mult = mult === 10 ? 2 : mult + 1;
+                    }
+                    const rem = sum % 11;
+                    return rem === 10 ? 1 : rem;
+                };
+                const dv1 = calcDV(base30);
+                const dv2 = calcDV(base30 + dv1);
+                const raw = base30 + dv1 + dv2;
+
+                return punctuated 
+                    ? `${serventia} ${acervo} ${servico} ${ano} ${tipo} ${livro} ${folha} ${termo}-${dv1}${dv2}`
+                    : raw;
+            },
+
+            inscricaoEstadual(punctuated = true) {
+                // Padrão SP (12 dígitos com 2 DVs)
+                const d = Array.from({ length: 8 }, () => Utils.randInt(0, 9));
+                const w1 = [1, 3, 4, 5, 6, 7, 8, 10];
+                const dv1 = (d.reduce((acc, v, i) => acc + v * w1[i], 0) % 11) % 10;
+                const d9to11 = [dv1, Utils.randInt(0, 9), Utils.randInt(0, 9)];
+                const full11 = [...d, ...d9to11];
+                const w2 = [3, 2, 10, 9, 8, 7, 6, 5, 4, 3, 2];
+                const dv2 = (full11.reduce((acc, v, i) => acc + v * w2[i], 0) % 11) % 10;
+                const raw = full11.join('') + dv2;
+                return punctuated ? raw.replace(/(\d{3})(\d{3})(\d{3})(\d{3})/, '$1.$2.$3.$4') : raw;
+            },
+
+            // --- 2. DADOS PESSOAIS & IDENTIDADE ---
+            personIdentity(genderFilter = 'random') {
+                const isFemale = genderFilter === 'F' ? true : (genderFilter === 'M' ? false : Math.random() > 0.5);
+                const firstName = Utils.pick(isFemale ? DataPools.firstNamesF : DataPools.firstNamesM);
+                const midName = Utils.pick(DataPools.lastNames);
+                let lastName = Utils.pick(DataPools.lastNames);
+                while (lastName === midName) lastName = Utils.pick(DataPools.lastNames);
+
+                const fullName = `${firstName} ${midName} ${lastName}`;
+                const motherName = `${Utils.pick(DataPools.firstNamesF)} ${Utils.pick(DataPools.lastNames)} ${lastName}`;
+                const fatherName = `${Utils.pick(DataPools.firstNamesM)} ${midName} ${lastName}`;
+
+                // Nascimento entre 18 e 75 anos
+                const currentYear = 2026;
+                const birthYear = Utils.randInt(currentYear - 75, currentYear - 18);
+                const birthMonth = Utils.randInt(1, 12);
+                const birthDay = Utils.randInt(1, 28);
+                const age = currentYear - birthYear;
+                const birthDate = `${Utils.pad(birthDay)}/${Utils.pad(birthMonth)}/${birthYear}`;
+
+                // Signo
+                let sign = 'Capricórnio';
+                for (const s of DataPools.zodiacSigns) {
+                    if ((birthMonth === s.start[0] && birthDay >= s.start[1]) || (birthMonth === s.end[0] && birthDay <= s.end[1])) {
+                        sign = s.name;
+                        break;
+                    }
+                }
+
+                return {
+                    fullName,
+                    gender: isFemale ? 'Feminino' : 'Masculino',
+                    birthDate,
+                    age: `${age} anos`,
+                    sign,
+                    motherName,
+                    fatherName,
+                    maritalStatus: Utils.pick(DataPools.maritalStatuses),
+                    bloodType: Utils.pick(DataPools.bloodTypes),
+                    profession: Utils.pick(DataPools.professions),
+                    nationality: Utils.pick(DataPools.nationalities)
+                };
+            },
+
+            // --- 3. CONTATO & ENDEREÇO ---
+            contactAndAddress(fullName = null, punctuated = true) {
+                const nameBase = fullName || `${Utils.pick(DataPools.firstNamesM)} ${Utils.pick(DataPools.lastNames)}`;
+                const domains = ['gmail.com', 'outlook.com.br', 'hotmail.com', 'uol.com.br', 'terra.com.br', 'yahoo.com.br'];
+                const email = `${Utils.slugify(nameBase)}${Utils.randInt(10, 99)}@${Utils.pick(domains)}`;
+
+                const loc = Utils.pick(DataPools.cities);
+                const landlineRaw = `${loc.ddd}${Utils.randInt(2, 5)}${Utils.digits(7)}`;
+                const mobileRaw = `${loc.ddd}9${Utils.randInt(7, 9)}${Utils.digits(7)}`;
+
+                const landline = punctuated ? landlineRaw.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3') : landlineRaw;
+                const mobile = punctuated ? mobileRaw.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3') : mobileRaw;
+
+                const cepRaw = `${loc.cepPrefix}${Utils.digits(6)}`;
+                const cep = punctuated ? cepRaw.replace(/(\d{5})(\d{3})/, '$1-$2') : cepRaw;
+
+                const street = Utils.pick(DataPools.streets);
+                const number = String(Utils.randInt(10, 4500));
+                const neighborhood = Utils.pick(DataPools.neighborhoods);
+                const fullAddress = `${street}, ${number} - ${neighborhood}, ${loc.city} - ${loc.uf}, CEP ${cep}`;
+
+                const lat = (loc.lat + (Math.random() - 0.5) * 0.08).toFixed(6);
+                const lng = (loc.lng + (Math.random() - 0.5) * 0.08).toFixed(6);
+
+                return {
+                    email,
+                    landline,
+                    mobile,
+                    cep,
+                    street,
+                    number,
+                    neighborhood,
+                    city: loc.city,
+                    state: loc.uf,
+                    fullAddress,
+                    coordinates: `${lat}, ${lng}`
+                };
+            },
+
+            // --- 4. FINANCEIRO & BANCÁRIO ---
+            creditCard(brandChoice = 'random', punctuated = true) {
+                const brands = {
+                    visa: { name: 'Visa', prefixes: ['4532', '4556', '4916', '4024'], len: 16, cvvLen: 3 },
+                    mastercard: { name: 'Mastercard', prefixes: ['5105', '5234', '5412', '5589'], len: 16, cvvLen: 3 },
+                    elo: { name: 'Elo', prefixes: ['6362', '6363', '5067', '4389'], len: 16, cvvLen: 3 },
+                    amex: { name: 'American Express', prefixes: ['3412', '3782', '3714'], len: 15, cvvLen: 4 }
+                };
+                const keys = Object.keys(brands);
+                const selectedKey = brandChoice === 'random' ? Utils.pick(keys) : brandChoice;
+                const brand = brands[selectedKey];
+
+                const prefix = Utils.pick(brand.prefixes);
+                const bodyLen = brand.len - prefix.length - 1;
+                const partial = (prefix + Utils.digits(bodyLen)).split('').map(Number);
+
+                // Algoritmo de Luhn para dígito verificador
+                let sum = 0;
+                let doubleUp = true;
+                for (let i = partial.length - 1; i >= 0; i--) {
+                    let val = partial[i];
+                    if (doubleUp) {
+                        val *= 2;
+                        if (val > 9) val -= 9;
+                    }
+                    sum += val;
+                    doubleUp = !doubleUp;
+                }
+                const checkDigit = (10 - (sum % 10)) % 10;
+                const rawNumber = partial.join('') + checkDigit;
+
+                let formattedNumber = rawNumber;
+                if (punctuated) {
+                    formattedNumber = brand.len === 15
+                        ? rawNumber.replace(/(\d{4})(\d{6})(\d{5})/, '$1 $2 $3')
+                        : rawNumber.replace(/(\d{4})(\d{4})(\d{4})(\d{4})/, '$1 $2 $3 $4');
+                }
+
+                const expMonth = Utils.pad(Utils.randInt(1, 12), 2);
+                const expYear = String(Utils.randInt(2027, 2033));
+                const cvv = Utils.digits(brand.cvvLen);
+
+                return {
+                    brand: brand.name,
+                    number: formattedNumber,
+                    expiry: `${expMonth}/${expYear}`,
+                    cvv
+                };
+            },
+
+            bankAccount() {
+                const bank = Utils.pick(DataPools.banks);
+                const agency = Utils.digits(4);
+                const accNum = Utils.digits(Utils.randInt(5, 8));
+                const accDv = String(Utils.randInt(0, 9));
+                const account = `${accNum}-${accDv}`;
+
+                // IBAN Brasileiro: BR + 2 dígitos check + 8 ISPB + 5 Agência + 10 Conta + 1 Tipo + 1 Titular = 29 chars
+                const iban = `BR${Utils.digits(2)}${Utils.pad(bank.code, 8)}${Utils.pad(agency, 5)}${Utils.pad(accNum + accDv, 10)}C1`;
+
+                return {
+                    bank: `${bank.code} - ${bank.name}`,
+                    agency,
+                    account,
+                    iban
+                };
+            },
+
+            pixKey(cpfVal, emailVal, mobileVal) {
+                const uuid = this.uuid();
+                const types = [
+                    { label: 'Chave Aleatória (EVP)', value: uuid },
+                    { label: 'CPF', value: cpfVal },
+                    { label: 'E-mail', value: emailVal },
+                    { label: 'Telefone', value: `+55${mobileVal.replace(/\D/g, '')}` }
+                ];
+                return Utils.pick(types);
+            },
+
+            monetary() {
+                const amount = (Math.random() * 14950 + 50).toFixed(2);
+                const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(amount);
+                const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format((amount / 5.45).toFixed(2));
+                const eur = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format((amount / 5.95).toFixed(2));
+                return { brl, usd, eur };
+            },
+
+            // --- 5. VEÍCULOS ---
+            vehicle(punctuated = true) {
+                const letters = Utils.letters(3);
+                const d1 = Utils.digits(1);
+                const mercosulLetter = Utils.letters(1);
+                const d2 = Utils.digits(2);
+
+                const plateMercosul = `${letters}${d1}${mercosulLetter}${d2}`;
+                const plateOld = punctuated ? `${letters}-${d1}${Utils.digits(3)}` : `${letters}${d1}${Utils.digits(3)}`;
+
+                // RENAVAM (11 dígitos com Módulo 11)
+                const baseRen = Array.from({ length: 10 }, () => Utils.randInt(0, 9));
+                const weights = [3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+                const rem = (baseRen.reduce((acc, v, i) => acc + v * weights[i], 0) * 10) % 11;
+                const dvRen = rem === 10 ? 0 : rem;
+                const renavam = baseRen.join('') + dvRen;
+
+                // Chassi VIN (17 caracteres sem I, O, Q)
+                const vinChars = '0123456789ABCDEFGHJKLMNPRSTUVWXYZ';
+                const wmi = Utils.pick(['9BW', '9BG', '9BD', '93H', '9BR', '936']); // Fabricantes Brasil
+                const vds = Array.from({ length: 6 }, () => vinChars[Utils.randInt(0, vinChars.length - 1)]).join('');
+                const vis = Array.from({ length: 8 }, () => vinChars[Utils.randInt(0, vinChars.length - 1)]).join('');
+                const chassi = `${wmi}${vds}${vis}`;
+
+                const makeObj = Utils.pick(DataPools.vehicles);
+                const model = Utils.pick(makeObj.models);
+                const year = `${Utils.randInt(2016, 2026)}/${Utils.randInt(2017, 2026)}`;
+                const color = Utils.pick(DataPools.carColors);
+
+                return {
+                    plateMercosul,
+                    plateOld,
+                    renavam,
+                    chassi,
+                    makeModel: `${makeObj.brand} ${model}`,
+                    year,
+                    color
+                };
+            },
+
+            // --- 6. TECNOLOGIA, REDES & SEGURANÇA ---
+            ipv4() {
+                return `${Utils.randInt(11, 223)}.${Utils.randInt(0, 255)}.${Utils.randInt(0, 255)}.${Utils.randInt(1, 254)}`;
+            },
+
+            ipv6() {
+                return Array.from({ length: 8 }, () => Utils.hex(4)).join(':');
+            },
+
+            macAddress() {
+                return Array.from({ length: 6 }, () => Utils.hex(2).toUpperCase()).join(':');
+            },
+
+            uuid() {
+                if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+                    return crypto.randomUUID();
+                }
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+                    const r = Math.random() * 16 | 0;
+                    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                });
+            },
+
+            password(opts = { len: 16, upper: true, lower: true, num: true, sym: true }) {
+                let charset = '';
+                if (opts.lower) charset += 'abcdefghijklmnopqrstuvwxyz';
+                if (opts.upper) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                if (opts.num) charset += '0123456789';
+                if (opts.sym) charset += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+                if (!charset) charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+                return Array.from({ length: opts.len }, () => charset[Math.floor(Math.random() * charset.length)]).join('');
+            },
+
+            async cryptoHashes(seedText) {
+                const input = seedText || this.uuid();
+                const md5 = Utils.hex(32); // MD5 simulado 128-bit
+                if (typeof crypto !== 'undefined' && crypto.subtle) {
+                    const enc = new TextEncoder().encode(input);
+                    const sha1Buf = await crypto.subtle.digest('SHA-1', enc);
+                    const sha256Buf = await crypto.subtle.digest('SHA-256', enc);
+                    const toHex = (buf) => Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+                    return {
+                        md5,
+                        sha1: toHex(sha1Buf),
+                        sha256: toHex(sha256Buf)
+                    };
+                }
+                return { md5, sha1: Utils.hex(40), sha256: Utils.hex(64) };
+            },
+
+            jwtToken() {
+                const b64url = (obj) => btoa(JSON.stringify(obj)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+                const header = b64url({ alg: 'HS256', typ: 'JWT' });
+                const now = Math.floor(Date.now() / 1000);
+                const payload = b64url({
+                    sub: this.uuid(),
+                    name: `${Utils.pick(DataPools.firstNamesM)} ${Utils.pick(DataPools.lastNames)}`,
+                    role: Utils.pick(['admin', 'developer', 'qa_tester', 'service_account']),
+                    iat: now,
+                    exp: now + 86400
+                });
+                const signature = Utils.hex(43);
+                return `${header}.${payload}.${signature}`;
+            },
+
+            domainAndUrl() {
+                const adj = Utils.pick(['nexus', 'apex', 'cloud', 'pulse', 'core', 'vortex', 'nova', 'alpha', 'prime', 'sync']);
+                const noun = Utils.pick(['tech', 'systems', 'labs', 'data', 'digital', 'solutions', 'pay', 'net', 'hub', 'soft']);
+                const tld = Utils.pick(['.com.br', '.io', '.tech', '.net.br', '.app', '.dev']);
+                const domain = `${adj}${noun}${tld}`;
+                const path = Utils.pick(['/api/v2/users', '/dashboard/analytics', '/auth/callback', '/webhooks/events', '/status']);
+                return {
+                    domain,
+                    url: `https://www.${domain}${path}`
+                };
+            },
+
+            colorFormats() {
+                const r = Utils.randInt(0, 255);
+                const g = Utils.randInt(0, 255);
+                const b = Utils.randInt(0, 255);
+                const hex = `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase()}`;
+
+                const rNorm = r / 255, gNorm = g / 255, bNorm = b / 255;
+                const max = Math.max(rNorm, gNorm, bNorm), min = Math.min(rNorm, gNorm, bNorm);
+                let h = 0, s = 0, l = (max + min) / 2;
+                if (max !== min) {
+                    const d = max - min;
+                    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                    switch (max) {
+                        case rNorm: h = (gNorm - bNorm) / d + (gNorm < bNorm ? 6 : 0); break;
+                        case gNorm: h = (bNorm - rNorm) / d + 2; break;
+                        case bNorm: h = (rNorm - gNorm) / d + 4; break;
+                    }
+                    h /= 6;
+                }
+                const hsl = `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
+                return { hex, rgb: `rgb(${r}, ${g}, ${b})`, hsl };
+            },
+
+            // --- 7. EMPRESA & NEGÓCIOS ---
+            company(punctuated = true) {
+                const s1 = Utils.pick(DataPools.lastNames);
+                const s2 = Utils.pick(DataPools.lastNames);
+                const sector = Utils.pick(DataPools.companySectors);
+                const suffix = Utils.pick(DataPools.companyTypes);
+
+                const razaoSocial = `${s1} & ${s2} ${sector} ${suffix}`;
+                const nomeFantasia = `${s1} ${Utils.pick(['Brasil', 'Tech', 'Group', 'Express', 'Global', 'Solutions', 'Prime'])}`;
+                const cnpj = this.cnpj(punctuated);
+                const ie = this.inscricaoEstadual(punctuated);
+                const openingDate = `${Utils.pad(Utils.randInt(1, 28))}/${Utils.pad(Utils.randInt(1, 12))}/${Utils.randInt(1995, 2025)}`;
+
+                // EAN-13 válido (Prefixo 789 Brasil)
+                const eanBase = ('789' + Utils.digits(9)).split('').map(Number);
+                const eanSum = eanBase.reduce((acc, val, idx) => acc + val * (idx % 2 === 0 ? 1 : 3), 0);
+                const eanDv = (10 - (eanSum % 10)) % 10;
+                const ean13 = eanBase.join('') + eanDv;
+
+                const sku = `SKU-${Utils.letters(3)}-${Utils.digits(5)}`;
+
+                return {
+                    razaoSocial,
+                    nomeFantasia,
+                    cnpj,
+                    ie,
+                    legalNature: Utils.pick(DataPools.legalNatures),
+                    openingDate,
+                    size: Utils.pick(DataPools.companySizes),
+                    ean13,
+                    sku
+                };
+            },
+
+            // --- 8. TEXTO & LOREM IPSUM ---
+            loremText() {
+                const makeSentence = () => {
+                    const len = Utils.randInt(8, 15);
+                    const words = Array.from({ length: len }, () => Utils.pick(DataPools.loremWords));
+                    words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
+                    return words.join(' ') + '.';
+                };
+                const makeParagraph = () => Array.from({ length: Utils.randInt(3, 5) }, makeSentence).join(' ');
+
+                const userPrefix = Utils.slugify(Utils.pick(DataPools.firstNamesM));
+                const userSuffix = Utils.pick(['_dev', '.br', '_qa', '99', '_sys', 'pro', '_sec']);
+
+                return {
+                    username: `${userPrefix}${userSuffix}`,
+                    words: Array.from({ length: 6 }, () => Utils.pick(DataPools.loremWords)).join(', '),
+                    sentence: makeSentence(),
+                    paragraph: makeParagraph()
+                };
+            },
+
+            // --- 9. PESSOA COMPLETA (MASTER GENERATOR) ---
+            fullProfile(punctuated = true) {
+                const person = this.personIdentity('random');
+                const contact = this.contactAndAddress(person.fullName, punctuated);
+                const cpf = this.cpf(punctuated);
+                const rg = this.rg(punctuated);
+                const cnh = this.cnh();
+                const pis = this.pis(punctuated);
+                const titulo = this.tituloEleitor(punctuated);
+                const card = this.creditCard('random', punctuated);
+                const bank = this.bankAccount();
+                const pix = this.pixKey(cpf, contact.email, contact.mobile);
+                const car = this.vehicle(punctuated);
+
+                return {
+                    nome_completo: person.fullName,
+                    sexo: person.gender,
+                    data_nascimento: person.birthDate,
+                    idade: person.age,
+                    signo: person.sign,
+                    cpf,
+                    rg,
+                    cnh,
+                    pis_pasep: pis,
+                    titulo_eleitor: titulo,
+                    mae: person.motherName,
+                    pai: person.fatherName,
+                    estado_civil: person.maritalStatus,
+                    tipo_sanguineo: person.bloodType,
+                    profissao: person.profession,
+                    email: contact.email,
+                    celular: contact.mobile,
+                    telefone_fixo: contact.landline,
+                    cep: contact.cep,
+                    endereco: contact.street,
+                    numero: contact.number,
+                    bairro: contact.neighborhood,
+                    cidade: contact.city,
+                    estado: contact.state,
+                    coordenadas: contact.coordinates,
+                    banco: bank.bank,
+                    agencia: bank.agency,
+                    conta: bank.account,
+                    chave_pix: `${pix.value} (${pix.label})`,
+                    cartao_bandeira: card.brand,
+                    cartao_numero: card.number,
+                    cartao_validade: card.expiry,
+                    cartao_cvv: card.cvv,
+                    veiculo_modelo: car.makeModel,
+                    veiculo_placa_mercosul: car.plateMercosul,
+                    veiculo_renavam: car.renavam
+                };
+            }
+        };
+
+        /**
+         * ============================================================================
+         * APPLICATION STATE & CATEGORY DEFINITIONS
+         * ============================================================================
+         */
+        const AppState = {
+            activeCategory: 'pessoa_completa',
+            punctuated: true,
+            genderFilter: 'random',
+            cardBrandFilter: 'random',
+            passwordOpts: { len: 16, upper: true, lower: true, num: true, sym: true },
+            currentItems: [],
+            batchData: []
+        };
+
+        const Categories = [
+            {
+                id: 'pessoa_completa',
+                label: 'Pessoa Completa',
+                badge: 'GERADOR MESTRE',
+                icon: 'ph-user-circle-check',
+                description: 'Identidade brasileira completa com documentos válidos, filiação, endereço, conta bancária, cartão e veículo.',
+                supportsPunctuation: true
+            },
+            {
+                id: 'documentos',
+                label: 'Documentos Brasileiros',
+                badge: 'VALIDAÇÃO MÓDULO 11',
+                icon: 'ph-identification-card',
+                description: 'CPF, CNPJ, RG, CNH, Título de Eleitor, PIS/PASEP, Certidões CNJ e Inscrição Estadual com dígitos verificadores reais.',
+                supportsPunctuation: true
+            },
+            {
+                id: 'pessoais',
+                label: 'Dados Pessoais',
+                badge: 'IDENTIDADE & PERFIL',
+                icon: 'ph-user',
+                description: 'Nomes completos, data de nascimento, idade, signo, filiação, tipo sanguíneo, estado civil e profissão.',
+                supportsPunctuation: false
+            },
+            {
+                id: 'contato',
+                label: 'Contato & Endereço',
+                badge: 'GEOLOCALIZAÇÃO BR',
+                icon: 'ph-map-pin',
+                description: 'E-mails, telefones fixos e celulares com DDDs reais, CEPs por capital, logradouros e coordenadas GPS.',
+                supportsPunctuation: true
+            },
+            {
+                id: 'financeiro',
+                label: 'Financeiro & Bancário',
+                badge: 'ALGORITMO DE LUHN',
+                icon: 'ph-credit-card',
+                description: 'Cartões de crédito válidos (Visa, Mastercard, Elo, Amex), contas bancárias, chaves PIX, IBAN e valores monetários.',
+                supportsPunctuation: true
+            },
+            {
+                id: 'veiculos',
+                label: 'Veículos & Frota',
+                badge: 'DETRAN / MERCOSUL',
+                icon: 'ph-car',
+                description: 'Placas padrão Mercosul e antigo, RENAVAM com dígito verificador, Chassi (VIN), marca, modelo, ano e cor.',
+                supportsPunctuation: true
+            },
+            {
+                id: 'tecnologia',
+                label: 'Tecnologia & Segurança',
+                badge: 'REDES, HASHES & CRYPTO',
+                icon: 'ph-shield-check',
+                description: 'IPv4, IPv6, MAC Address, UUID v4, Senhas fortes, Hashes reais (SHA-1/SHA-256), Tokens JWT, User-Agents e Cores.',
+                supportsPunctuation: false
+            },
+            {
+                id: 'empresas',
+                label: 'Empresa & Negócios',
+                badge: 'CORPORATIVO & VAREJO',
+                icon: 'ph-buildings',
+                description: 'Razão Social, Nome Fantasia, CNPJ, Natureza Jurídica, Porte, Data de Abertura, SKU e Código de Barras EAN-13 válido.',
+                supportsPunctuation: true
+            },
+            {
+                id: 'texto',
+                label: 'Texto & Lorem Ipsum',
+                badge: 'CONTEÚDO & MOCKUPS',
+                icon: 'ph-text-aa',
+                description: 'Parágrafos técnicos em português, frases, listas de palavras-chave e nomes de usuário (usernames).',
+                supportsPunctuation: false
+            }
+        ];
+
+        /**
+         * ============================================================================
+         * UI RENDERING & INTERACTION ENGINE
+         * ============================================================================
+         */
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            const iconClass = type === 'success' ? 'ph-check-circle text-emerald-400' : 'ph-info text-cyan-400';
+            
+            toast.className = 'flex items-center gap-2.5 bg-dark-800/95 backdrop-blur-md border border-slate-700 text-white px-4 py-3 rounded-xl shadow-2xl transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto';
+            toast.innerHTML = `
+                <i class="ph-fill ${iconClass} text-lg"></i>
+                <span class="text-xs font-medium">${message}</span>
+            `;
+            container.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            });
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 2200);
+        }
+
+        function copyTextToClipboard(text, btnElement = null) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast('Copiado para a área de transferência!');
+                if (btnElement) {
+                    const originalHTML = btnElement.innerHTML;
+                    btnElement.innerHTML = `<i class="ph-bold ph-check text-emerald-400"></i><span class="text-emerald-400">Copiado!</span>`;
+                    btnElement.classList.add('border-emerald-500/50', 'bg-emerald-500/10');
+                    setTimeout(() => {
+                        btnElement.innerHTML = originalHTML;
+                        btnElement.classList.remove('border-emerald-500/50', 'bg-emerald-500/10');
+                    }, 1500);
+                }
+            } catch (err) {
+                showToast('Não foi possível copiar o texto.', 'info');
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+
+        function renderSidebar(filterText = '') {
+            const navMenu = document.getElementById('nav-menu');
+            const query = filterText.toLowerCase().trim();
+            
+            const filtered = Categories.filter(cat => 
+                cat.label.toLowerCase().includes(query) || 
+                cat.description.toLowerCase().includes(query)
+            );
+
+            navMenu.innerHTML = filtered.map(cat => {
+                const isActive = cat.id === AppState.activeCategory;
+                return `
+                    <button onclick="selectCategory('${cat.id}')" 
+                        class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all cursor-pointer group ${
+                            isActive 
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-semibold shadow-sm' 
+                            : 'text-slate-400 hover:bg-dark-800/70 hover:text-slate-200 border border-transparent'
+                        }">
+                        <i class="ph ${isActive ? 'ph-fill' : 'ph-bold'} ${cat.icon} text-lg ${isActive ? 'text-emerald-400' : 'text-slate-500 group-hover:text-slate-300'}"></i>
+                        <span class="text-sm truncate">${cat.label}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function createFieldCard(item, index) {
+            const isMultiline = item.multiline || String(item.value).length > 55;
+            const colorSwatch = item.colorHex 
+                ? `<span class="w-4 h-4 rounded-md border border-white/20 shrink-0 shadow-inner" style="background-color: ${item.colorHex}"></span>` 
+                : '';
+
+            return `
+                <div class="bg-dark-900 border border-slate-800/90 hover:border-slate-700 rounded-2xl p-4 flex flex-col justify-between transition-all group shadow-sm ${item.fullWidth ? 'md:col-span-2 xl:col-span-3' : ''}">
+                    <div class="flex items-center justify-between gap-2 mb-2.5">
+                        <div class="flex items-center gap-2 min-w-0">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 truncate">${item.label}</span>
+                            ${item.tag ? `<span class="text-[10px] font-mono bg-dark-800 text-cyan-400 border border-cyan-500/20 px-1.5 py-0.5 rounded">${item.tag}</span>` : ''}
+                        </div>
+                        <div class="flex items-center gap-1 shrink-0">
+                            <button onclick="regenerateSingleField(${index})" title="Gerar novo valor" 
+                                class="p-1.5 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-dark-800 transition-colors cursor-pointer">
+                                <i class="ph-bold ph-arrows-clockwise text-sm"></i>
+                            </button>
+                            <button onclick="copyFieldByIndex(${index}, this)" title="Copiar valor" 
+                                class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-dark-800/90 hover:bg-slate-700 border border-slate-700/80 text-xs font-medium text-slate-300 transition-all cursor-pointer">
+                                <i class="ph ph-copy text-sm"></i>
+                                <span>Copiar</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    ${item.customControls || ''}
+
+                    <div class="bg-dark-950/90 border border-slate-800/80 rounded-xl px-3.5 py-2.5 flex items-center gap-2.5 overflow-x-auto">
+                        ${colorSwatch}
+                        <code id="field-val-${index}" class="font-mono text-sm sm:text-[15px] text-slate-100 select-all ${isMultiline ? 'whitespace-pre-wrap break-all leading-relaxed' : 'whitespace-nowrap'}">${item.value}</code>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function buildCategoryItems(catId) {
+            const p = AppState.punctuated;
+
+            switch (catId) {
+                case 'pessoa_completa': {
+                    const prof = Generators.fullProfile(p);
+                    const mapLabels = {
+                        nome_completo: 'Nome Completo', sexo: 'Sexo', data_nascimento: 'Data de Nascimento', idade: 'Idade', signo: 'Signo',
+                        cpf: 'CPF (Válido)', rg: 'RG', cnh: 'CNH', pis_pasep: 'PIS / PASEP', titulo_eleitor: 'Título de Eleitor',
+                        mae: 'Nome da Mãe', pai: 'Nome do Pai', estado_civil: 'Estado Civil', tipo_sanguineo: 'Tipo Sanguíneo', profissao: 'Profissão',
+                        email: 'E-mail', celular: 'Celular', telefone_fixo: 'Telefone Fixo', cep: 'CEP', endereco: 'Logradouro',
+                        numero: 'Número', bairro: 'Bairro', cidade: 'Cidade', estado: 'Estado (UF)', coordenadas: 'Coordenadas GPS',
+                        banco: 'Instituição Bancária', agencia: 'Agência', conta: 'Conta Corrente', chave_pix: 'Chave PIX',
+                        cartao_bandeira: 'Bandeira Cartão', cartao_numero: 'Número Cartão (Luhn)', cartao_validade: 'Validade', cartao_cvv: 'CVV',
+                        veiculo_modelo: 'Veículo (Marca/Modelo)', veiculo_placa_mercosul: 'Placa Mercosul', veiculo_renavam: 'RENAVAM'
+                    };
+                    return Object.entries(prof).map(([k, v]) => ({
+                        key: k,
+                        label: mapLabels[k] || k,
+                        value: v,
+                        gen: () => Generators.fullProfile(AppState.punctuated)[k]
+                    }));
+                }
+
+                case 'documentos':
+                    return [
+                        { key: 'cpf', label: 'CPF', tag: 'Módulo 11', value: Generators.cpf(p), gen: () => Generators.cpf(AppState.punctuated) },
+                        { key: 'cnpj', label: 'CNPJ', tag: 'Módulo 11', value: Generators.cnpj(p), gen: () => Generators.cnpj(AppState.punctuated) },
+                        { key: 'rg', label: 'RG (SSP-SP)', tag: 'Válido', value: Generators.rg(p), gen: () => Generators.rg(AppState.punctuated) },
+                        { key: 'cnh', label: 'CNH (Registro Nacional)', tag: '11 Dígitos', value: Generators.cnh(), gen: () => Generators.cnh() },
+                        { key: 'titulo', label: 'Título de Eleitor', tag: 'TSE', value: Generators.tituloEleitor(p), gen: () => Generators.tituloEleitor(AppState.punctuated) },
+                        { key: 'pis', label: 'PIS / PASEP / NIT', tag: 'Módulo 11', value: Generators.pis(p), gen: () => Generators.pis(AppState.punctuated) },
+                        { key: 'certidao', label: 'Certidão (Nasc / Casam / Óbito)', tag: 'Matrícula CNJ 32d', value: Generators.certidao(p), gen: () => Generators.certidao(AppState.punctuated), fullWidth: true },
+                        { key: 'ie', label: 'Inscrição Estadual (SP)', tag: 'SEFAZ', value: Generators.inscricaoEstadual(p), gen: () => Generators.inscricaoEstadual(AppState.punctuated) }
+                    ];
+
+                case 'pessoais': {
+                    const id = Generators.personIdentity(AppState.genderFilter);
+                    const genderSelector = `
+                        <div class="flex items-center gap-1.5 mb-2.5">
+                            ${['random', 'M', 'F'].map(g => {
+                                const labels = { random: 'Aleatório', M: 'Masculino', F: 'Feminino' };
+                                const active = AppState.genderFilter === g;
+                                return `<button onclick="setGenderFilter('${g}')" class="px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-colors cursor-pointer ${active ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-300' : 'bg-dark-950 border-slate-800 text-slate-400 hover:text-slate-200'}">${labels[g]}</button>`;
+                            }).join('')}
+                        </div>
+                    `;
+                    return [
+                        { key: 'nome', label: 'Nome Completo', value: id.fullName, customControls: genderSelector, gen: () => Generators.personIdentity(AppState.genderFilter).fullName },
+                        { key: 'sexo', label: 'Gênero / Sexo', value: id.gender, gen: () => Generators.personIdentity(AppState.genderFilter).gender },
+                        { key: 'nascimento', label: 'Data de Nascimento', value: id.birthDate, gen: () => Generators.personIdentity(AppState.genderFilter).birthDate },
+                        { key: 'idade', label: 'Idade Atual', value: id.age, gen: () => Generators.personIdentity(AppState.genderFilter).age },
+                        { key: 'signo', label: 'Signo Astrológico', value: id.sign, gen: () => Generators.personIdentity(AppState.genderFilter).sign },
+                        { key: 'mae', label: 'Filiação (Mãe)', value: id.motherName, gen: () => Generators.personIdentity(AppState.genderFilter).motherName },
+                        { key: 'pai', label: 'Filiação (Pai)', value: id.fatherName, gen: () => Generators.personIdentity(AppState.genderFilter).fatherName },
+                        { key: 'estado_civil', label: 'Estado Civil', value: id.maritalStatus, gen: () => Generators.personIdentity(AppState.genderFilter).maritalStatus },
+                        { key: 'tipo_sanguineo', label: 'Tipo Sanguíneo', tag: 'Fator Rh', value: id.bloodType, gen: () => Generators.personIdentity(AppState.genderFilter).bloodType },
+                        { key: 'profissao', label: 'Profissão / Cargo', value: id.profession, gen: () => Generators.personIdentity(AppState.genderFilter).profession },
+                        { key: 'nacionalidade', label: 'Nacionalidade', value: id.nationality, gen: () => Generators.personIdentity(AppState.genderFilter).nationality }
+                    ];
+                }
+
+                case 'contato': {
+                    const c = Generators.contactAndAddress(null, p);
+                    return [
+                        { key: 'email', label: 'E-mail Pessoal', value: c.email, gen: () => Generators.contactAndAddress(null, AppState.punctuated).email },
+                        { key: 'celular', label: 'Telefone Celular (DDD)', tag: '9 Dígitos', value: c.mobile, gen: () => Generators.contactAndAddress(null, AppState.punctuated).mobile },
+                        { key: 'fixo', label: 'Telefone Fixo (DDD)', value: c.landline, gen: () => Generators.contactAndAddress(null, AppState.punctuated).landline },
+                        { key: 'cep', label: 'CEP', tag: 'Correios', value: c.cep, gen: () => Generators.contactAndAddress(null, AppState.punctuated).cep },
+                        { key: 'logradouro', label: 'Logradouro (Rua / Av.)', value: c.street, gen: () => Generators.contactAndAddress(null, AppState.punctuated).street },
+                        { key: 'numero', label: 'Número', value: c.number, gen: () => Generators.contactAndAddress(null, AppState.punctuated).number },
+                        { key: 'bairro', label: 'Bairro', value: c.neighborhood, gen: () => Generators.contactAndAddress(null, AppState.punctuated).neighborhood },
+                        { key: 'cidade', label: 'Cidade', value: c.city, gen: () => Generators.contactAndAddress(null, AppState.punctuated).city },
+                        { key: 'estado', label: 'Estado (UF)', value: c.state, gen: () => Generators.contactAndAddress(null, AppState.punctuated).state },
+                        { key: 'coordenadas', label: 'Coordenadas Geográficas (Lat, Lng)', tag: 'GPS', value: c.coordinates, gen: () => Generators.contactAndAddress(null, AppState.punctuated).coordinates },
+                        { key: 'endereco_completo', label: 'Endereço Completo Formatado', value: c.fullAddress, fullWidth: true, gen: () => Generators.contactAndAddress(null, AppState.punctuated).fullAddress }
+                    ];
+                }
+
+                case 'financeiro': {
+                    const card = Generators.creditCard(AppState.cardBrandFilter, p);
+                    const bank = Generators.bankAccount();
+                    const cpfTmp = Generators.cpf(p);
+                    const contactTmp = Generators.contactAndAddress(null, p);
+                    const pix = Generators.pixKey(cpfTmp, contactTmp.email, contactTmp.mobile);
+                    const money = Generators.monetary();
+
+                    const brandControls = `
+                        <div class="flex flex-wrap items-center gap-1.5 mb-2.5">
+                            ${['random', 'visa', 'mastercard', 'elo', 'amex'].map(b => {
+                                const names = { random: 'Todas', visa: 'Visa', mastercard: 'Mastercard', elo: 'Elo', amex: 'Amex' };
+                                const active = AppState.cardBrandFilter === b;
+                                return `<button onclick="setCardBrand('${b}')" class="px-2 py-0.5 rounded-md text-[11px] font-medium border transition-colors cursor-pointer ${active ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-300' : 'bg-dark-950 border-slate-800 text-slate-400 hover:text-slate-200'}">${names[b]}</button>`;
+                            }).join('')}
+                        </div>
+                    `;
+
+                    return [
+                        { key: 'cartao_numero', label: `Cartão de Crédito (${card.brand})`, tag: 'Luhn Válido', value: card.number, customControls: brandControls, gen: () => Generators.creditCard(AppState.cardBrandFilter, AppState.punctuated).number },
+                        { key: 'cartao_validade', label: 'Data de Validade', value: card.expiry, gen: () => Generators.creditCard(AppState.cardBrandFilter, AppState.punctuated).expiry },
+                        { key: 'cartao_cvv', label: 'Código de Segurança (CVV)', value: card.cvv, gen: () => Generators.creditCard(AppState.cardBrandFilter, AppState.punctuated).cvv },
+                        { key: 'banco', label: 'Instituição Bancária', value: bank.bank, gen: () => Generators.bankAccount().bank },
+                        { key: 'agencia', label: 'Agência Bancária', value: bank.agency, gen: () => Generators.bankAccount().agency },
+                        { key: 'conta', label: 'Conta Corrente com Dígito', value: bank.account, gen: () => Generators.bankAccount().account },
+                        { key: 'pix', label: `Chave PIX (${pix.label})`, tag: 'BACEN', value: pix.value, gen: () => Generators.pixKey(Generators.cpf(AppState.punctuated), Generators.contactAndAddress().email, Generators.contactAndAddress().mobile).value },
+                        { key: 'iban', label: 'Código IBAN Internacional', tag: 'ISO 13616', value: bank.iban, gen: () => Generators.bankAccount().iban },
+                        { key: 'valor_brl', label: 'Valor Monetário (Real BRL)', value: money.brl, gen: () => Generators.monetary().brl },
+                        { key: 'valor_usd', label: 'Valor Monetário (Dólar USD)', value: money.usd, gen: () => Generators.monetary().usd },
+                        { key: 'valor_eur', label: 'Valor Monetário (Euro EUR)', value: money.eur, gen: () => Generators.monetary().eur }
+                    ];
+                }
+
+                case 'veiculos': {
+                    const v = Generators.vehicle(p);
+                    return [
+                        { key: 'placa_mercosul', label: 'Placa Padrão Mercosul', tag: 'LLLNLNN', value: v.plateMercosul, gen: () => Generators.vehicle(AppState.punctuated).plateMercosul },
+                        { key: 'placa_antiga', label: 'Placa Padrão Antigo', tag: 'LLL-NNNN', value: v.plateOld, gen: () => Generators.vehicle(AppState.punctuated).plateOld },
+                        { key: 'renavam', label: 'Código RENAVAM', tag: 'Módulo 11', value: v.renavam, gen: () => Generators.vehicle(AppState.punctuated).renavam },
+                        { key: 'chassi', label: 'Número do Chassi (VIN)', tag: 'ISO 3779 (17d)', value: v.chassi, gen: () => Generators.vehicle(AppState.punctuated).chassi },
+                        { key: 'modelo', label: 'Marca / Modelo', value: v.makeModel, gen: () => Generators.vehicle(AppState.punctuated).makeModel },
+                        { key: 'ano', label: 'Ano Fabricação / Modelo', value: v.year, gen: () => Generators.vehicle(AppState.punctuated).year },
+                        { key: 'cor', label: 'Cor Predominante', value: v.color, gen: () => Generators.vehicle(AppState.punctuated).color }
+                    ];
+                }
+
+                case 'tecnologia': {
+                    const hashes = await Generators.cryptoHashes();
+                    const web = Generators.domainAndUrl();
+                    const color = Generators.colorFormats();
+                    const passControls = `
+                        <div class="flex flex-wrap items-center gap-3 mb-2.5 text-xs text-slate-400">
+                            <div class="flex items-center gap-2">
+                                <span>Tamanho: <strong id="pass-len-label" class="text-emerald-400 font-mono">${AppState.passwordOpts.len}</strong></span>
+                                <input type="range" min="8" max="64" value="${AppState.passwordOpts.len}" oninput="updatePassLen(this.value)" class="w-24">
+                            </div>
+                            <label class="flex items-center gap-1 cursor-pointer"><input type="checkbox" ${AppState.passwordOpts.upper ? 'checked' : ''} onchange="togglePassOpt('upper')" class="accent-emerald-500"> A-Z</label>
+                            <label class="flex items-center gap-1 cursor-pointer"><input type="checkbox" ${AppState.passwordOpts.num ? 'checked' : ''} onchange="togglePassOpt('num')" class="accent-emerald-500"> 0-9</label>
+                            <label class="flex items-center gap-1 cursor-pointer"><input type="checkbox" ${AppState.passwordOpts.sym ? 'checked' : ''} onchange="togglePassOpt('sym')" class="accent-emerald-500"> !@#</label>
+                        </div>
+                    `;
+
+                    return [
+                        { key: 'senha', label: 'Senha Forte Personalizável', tag: 'CSPRNG', value: Generators.password(AppState.passwordOpts), customControls: passControls, gen: () => Generators.password(AppState.passwordOpts) },
+                        { key: 'uuid', label: 'UUID v4', tag: 'RFC 4122', value: Generators.uuid(), gen: () => Generators.uuid() },
+                        { key: 'ipv4', label: 'Endereço IPv4', value: Generators.ipv4(), gen: () => Generators.ipv4() },
+                        { key: 'ipv6', label: 'Endereço IPv6', value: Generators.ipv6(), gen: () => Generators.ipv6() },
+                        { key: 'mac', label: 'Endereço MAC (Hardware)', value: Generators.macAddress(), gen: () => Generators.macAddress() },
+                        { key: 'cor_hex', label: 'Cor HEX', colorHex: color.hex, value: color.hex, gen: () => Generators.colorFormats().hex },
+                        { key: 'cor_rgb', label: 'Cor RGB', colorHex: color.hex, value: color.rgb, gen: () => Generators.colorFormats().rgb },
+                        { key: 'cor_hsl', label: 'Cor HSL', colorHex: color.hex, value: color.hsl, gen: () => Generators.colorFormats().hsl },
+                        { key: 'dominio', label: 'Domínio Corporativo', value: web.domain, gen: () => Generators.domainAndUrl().domain },
+                        { key: 'url', label: 'Endpoint / URL Completa', value: web.url, gen: () => Generators.domainAndUrl().url },
+                        { key: 'md5', label: 'Hash MD5 (128-bit)', value: hashes.md5, gen: () => Utils.hex(32) },
+                        { key: 'sha1', label: 'Hash SHA-1 (Web Crypto)', value: hashes.sha1, gen: async () => (await Generators.cryptoHashes()).sha1 },
+                        { key: 'sha256', label: 'Hash SHA-256 (Web Crypto)', value: hashes.sha256, fullWidth: true, gen: async () => (await Generators.cryptoHashes()).sha256 },
+                        { key: 'jwt', label: 'Token JWT (JSON Web Token)', tag: 'HS256', value: Generators.jwtToken(), fullWidth: true, gen: () => Generators.jwtToken() },
+                        { key: 'user_agent', label: 'User-Agent (Navegador / OS)', value: Utils.pick(DataPools.userAgents), fullWidth: true, gen: () => Utils.pick(DataPools.userAgents) }
+                    ];
+                }
+
+                case 'empresas': {
+                    const emp = Generators.company(p);
+                    return [
+                        { key: 'razao_social', label: 'Razão Social', value: emp.razaoSocial, gen: () => Generators.company(AppState.punctuated).razaoSocial },
+                        { key: 'nome_fantasia', label: 'Nome Fantasia', value: emp.nomeFantasia, gen: () => Generators.company(AppState.punctuated).nomeFantasia },
+                        { key: 'cnpj', label: 'CNPJ da Empresa', tag: 'Módulo 11', value: emp.cnpj, gen: () => Generators.cnpj(AppState.punctuated) },
+                        { key: 'ie', label: 'Inscrição Estadual', value: emp.ie, gen: () => Generators.inscricaoEstadual(AppState.punctuated) },
+                        { key: 'natureza', label: 'Natureza Jurídica (CONCLA)', value: emp.legalNature, gen: () => Generators.company(AppState.punctuated).legalNature },
+                        { key: 'porte', label: 'Porte da Empresa', value: emp.size, gen: () => Generators.company(AppState.punctuated).size },
+                        { key: 'abertura', label: 'Data de Abertura', value: emp.openingDate, gen: () => Generators.company(AppState.punctuated).openingDate },
+                        { key: 'ean13', label: 'Código de Barras EAN-13', tag: 'GS1 Brasil (789)', value: emp.ean13, gen: () => Generators.company(AppState.punctuated).ean13 },
+                        { key: 'sku', label: 'Código SKU de Produto', value: emp.sku, gen: () => Generators.company(AppState.punctuated).sku }
+                    ];
+                }
+
+                case 'texto': {
+                    const txt = Generators.loremText();
+                    return [
+                        { key: 'username', label: 'Nome de Usuário (Username)', value: txt.username, gen: () => Generators.loremText().username },
+                        { key: 'palavras', label: 'Palavras-Chave Técnicas', value: txt.words, gen: () => Generators.loremText().words },
+                        { key: 'frase', label: 'Frase / Sentença', value: txt.sentence, fullWidth: true, gen: () => Generators.loremText().sentence },
+                        { key: 'paragrafo', label: 'Parágrafo Completo (Lorem Tech PT-BR)', value: txt.paragraph, fullWidth: true, multiline: true, gen: () => Generators.loremText().paragraph }
+                    ];
+                }
+            }
+            return [];
+        }
+
+        async function renderActiveCategory() {
+            const cat = Categories.find(c => c.id === AppState.activeCategory);
+            if (!cat) return;
+
+            document.getElementById('category-badge').textContent = cat.badge;
+            document.getElementById('category-title').textContent = cat.label;
+            document.getElementById('category-desc').textContent = cat.description;
+
+            const puncWrapper = document.getElementById('punctuation-wrapper');
+            if (cat.supportsPunctuation) {
+                puncWrapper.classList.remove('opacity-40', 'pointer-events-none');
+            } else {
+                puncWrapper.classList.add('opacity-40', 'pointer-events-none');
+            }
+
+            AppState.currentItems = await buildCategoryItems(cat.id);
+            
+            const grid = document.getElementById('generator-grid');
+            grid.innerHTML = AppState.currentItems.map((item, idx) => createFieldCard(item, idx)).join('');
+
+            // Atualiza dropdown de campo único no gerador em lote
+            const batchSelect = document.getElementById('batch-field-select');
+            batchSelect.innerHTML = `<option value="ALL">Todos os campos (${cat.label})</option>` +
+                AppState.currentItems.map(item => `<option value="${item.key}">Apenas: ${item.label}</option>`).join('');
+
+            await generateBatch();
+        }
+
+        async function regenerateSingleField(index) {
+            const item = AppState.currentItems[index];
+            if (!item || !item.gen) return;
+            const newVal = await item.gen();
+            item.value = newVal;
+            const codeEl = document.getElementById(`field-val-${index}`);
+            if (codeEl) {
+                codeEl.textContent = newVal;
+                codeEl.parentElement.classList.add('border-emerald-500/60');
+                setTimeout(() => codeEl.parentElement.classList.remove('border-emerald-500/60'), 350);
+            }
+        }
+
+        function copyFieldByIndex(index, btn) {
+            const item = AppState.currentItems[index];
+            if (item) copyTextToClipboard(String(item.value), btn);
+        }
+
+        function selectCategory(catId) {
+            AppState.activeCategory = catId;
+            renderSidebar(document.getElementById('sidebar-search').value);
+            renderActiveCategory();
+            closeMobileSidebar();
+        }
+
+        function setGenderFilter(gender) {
+            AppState.genderFilter = gender;
+            renderActiveCategory();
+        }
+
+        function setCardBrand(brand) {
+            AppState.cardBrandFilter = brand;
+            renderActiveCategory();
+        }
+
+        function updatePassLen(val) {
+            AppState.passwordOpts.len = parseInt(val, 10);
+            const label = document.getElementById('pass-len-label');
+            if (label) label.textContent = val;
+            regenerateSingleField(0);
+        }
+
+        function togglePassOpt(optKey) {
+            AppState.passwordOpts[optKey] = !AppState.passwordOpts[optKey];
+            regenerateSingleField(0);
+        }
+
+        /**
+         * ============================================================================
+         * BATCH GENERATOR & EXPORT ENGINE (JSON / CSV / TXT)
+         * ============================================================================
+         */
+        async function generateBatch() {
+            const qty = parseInt(document.getElementById('batch-quantity').value, 10) || 10;
+            const fieldFilter = document.getElementById('batch-field-select').value;
+            const format = document.getElementById('batch-format').value;
+            const records = [];
+
+            for (let i = 0; i < qty; i++) {
+                if (fieldFilter === 'ALL') {
+                    const row = {};
+                    for (const item of AppState.currentItems) {
+                        row[item.key] = await item.gen();
+                    }
+                    records.push(row);
+                } else {
+                    const targetItem = AppState.currentItems.find(it => it.key === fieldFilter);
+                    if (targetItem) {
+                        records.push({ [targetItem.key]: await targetItem.gen() });
+                    }
+                }
+            }
+
+            AppState.batchData = records;
+            document.getElementById('batch-count-badge').textContent = `${qty} ${qty === 1 ? 'registro' : 'registros'}`;
+
+            let formattedOutput = '';
+            if (format === 'json') {
+                if (fieldFilter !== 'ALL') {
+                    // Exporta array limpo se for campo único
+                    formattedOutput = JSON.stringify(records.map(r => Object.values(r)[0]), null, 2);
+                } else {
+                    formattedOutput = JSON.stringify(records, null, 2);
+                }
+            } else if (format === 'csv') {
+                if (records.length > 0) {
+                    const headers = Object.keys(records[0]);
+                    const csvRows = [
+                        headers.join(';'),
+                        ...records.map(row => headers.map(h => `"${String(row[h]).replace(/"/g, '""')}"`).join(';'))
+                    ];
+                    formattedOutput = csvRows.join('\n');
+                }
+            } else if (format === 'txt') {
+                if (fieldFilter !== 'ALL') {
+                    formattedOutput = records.map(r => Object.values(r)[0]).join('\n');
+                } else {
+                    formattedOutput = records.map((row, idx) => {
+                        const lines = Object.entries(row).map(([k, v]) => `${k.toUpperCase()}: ${v}`).join('\n');
+                        return `--- REGISTRO #${idx + 1} ---\n${lines}`;
+                    }).join('\n\n');
+                }
+            }
+
+            document.getElementById('batch-output').value = formattedOutput;
+        }
+
+        function downloadBatchFile() {
+            const content = document.getElementById('batch-output').value;
+            const format = document.getElementById('batch-format').value;
+            const mimeTypes = {
+                json: 'application/json;charset=utf-8',
+                csv: 'text/csv;charset=utf-8',
+                txt: 'text/plain;charset=utf-8'
+            };
+
+            const blob = new Blob([content], { type: mimeTypes[format] });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `dataforge_${AppState.activeCategory}_${Date.now()}.${format}`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast(`Arquivo .${format.toUpperCase()} baixado com sucesso!`);
+        }
+
+        /**
+         * ============================================================================
+         * MOBILE NAVIGATION & EVENT LISTENERS
+         * ============================================================================
+         */
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+
+        function openMobileSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            backdrop.classList.remove('hidden');
+        }
+
+        function closeMobileSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            backdrop.classList.add('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', openMobileSidebar);
+        document.getElementById('close-sidebar-btn').addEventListener('click', closeMobileSidebar);
+        backdrop.addEventListener('click', closeMobileSidebar);
+
+        document.getElementById('sidebar-search').addEventListener('input', (e) => {
+            renderSidebar(e.target.value);
+        });
+
+        document.getElementById('global-punctuation').addEventListener('change', (e) => {
+            AppState.punctuated = e.target.checked;
+            renderActiveCategory();
+        });
+
+        document.getElementById('btn-regenerate-all').addEventListener('click', () => {
+            renderActiveCategory();
+            showToast('Novos dados gerados!');
+        });
+
+        document.getElementById('btn-generate-batch').addEventListener('click', () => {
+            generateBatch();
+            showToast('Lote atualizado com sucesso!');
+        });
+
+        document.getElementById('batch-format').addEventListener('change', generateBatch);
+        document.getElementById('batch-quantity').addEventListener('change', generateBatch);
+        document.getElementById('batch-field-select').addEventListener('change', generateBatch);
+
+        document.getElementById('btn-copy-batch').addEventListener('click', function() {
+            const text = document.getElementById('batch-output').value;
+            copyTextToClipboard(text, this);
+        });
+
+        document.getElementById('btn-download-batch').addEventListener('click', downloadBatchFile);
+
+        // Initialize App on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSidebar();
+            renderActiveCategory();
+        });
+    </script>
 </body>
 </html>
