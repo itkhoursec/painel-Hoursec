@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel HoUrSeC BR | Gerador Universal de Dados Hoursec</title>
+    <title>Painel HoUrSeC | Gerador Universal de Dados</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -100,7 +100,7 @@
             <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-dark-950 font-bold shadow-lg">
                 <i class="ph-bold ph-database text-lg"></i>
             </div>
-            <span class="font-bold text-lg tracking-tight text-white">DataForge <span class="text-emerald-400">BR</span></span>
+            <span class="font-bold text-lg tracking-tight text-white">Painel <span class="text-emerald-400">HoUrSeC</span></span>
         </div>
         <button id="mobile-menu-btn" class="p-2 rounded-lg bg-dark-800 text-slate-300 hover:text-white border border-slate-700">
             <i class="ph ph-list text-xl"></i>
@@ -122,7 +122,7 @@
                         <i class="ph-bold ph-terminal-window text-xl"></i>
                     </div>
                     <div>
-                        <h1 class="font-bold text-lg leading-none text-white tracking-tight">DataForge <span class="text-emerald-400">BR</span></h1>
+                        <h1 class="font-bold text-lg leading-none text-white tracking-tight">Painel <span class="text-emerald-400">HoUrSeC</span></h1>
                         <span class="text-[11px] font-mono text-slate-400 tracking-wider uppercase">Suite QA & Dev v2.6</span>
                     </div>
                 </div>
@@ -272,14 +272,10 @@
 
             </div>
 
-            <!-- Discreet Legal Disclaimer Footer -->
+            <!-- Footer -->
             <footer class="mt-auto border-t border-slate-800/70 bg-dark-900/40 px-4 sm:px-8 py-4">
-                <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
-                    <div class="flex items-center gap-2 text-center sm:text-left">
-                        <i class="ph-fill ph-shield-warning text-amber-500/80 text-base shrink-0"></i>
-                        <p>
-                            <strong class="text-slate-400">Aviso Legal:</strong> Todos os dados gerados  podem ser legalmente usado, (nao limite sua diversao na cyber- HoUrSeC)
-                    <span class="font-mono text-[11px] text-slate-600 shrink-0">DataForge BR • 100% Client-Side</span>
+                <div class="max-w-7xl mx-auto flex items-center justify-center sm:justify-end text-xs text-slate-500">
+                    <span class="font-mono text-[11px] text-slate-600">Painel HoUrSeC • 100% Client-Side</span>
                 </div>
             </footer>
         </main>
@@ -289,7 +285,7 @@
     <script>
         /**
          * ============================================================================
-         * HoUrSeC PR - CORE ALGORITHMS & DATA POOLS
+         * PAINEL HoUrSeC - CORE ALGORITHMS & DATA POOLS
          * ============================================================================
          */
         const DataPools = {
@@ -1497,7 +1493,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `dataforge_${AppState.activeCategory}_${Date.now()}.${format}`;
+            a.download = `hoursec_${AppState.activeCategory}_${Date.now()}.${format}`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
